@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "piratemod",
+	"version": "${version}",
+	"name": "Pirate Mod",
+	"description": "Pretty much just adds Cannonballs.",
+	"authors": [
+		"sleepykairo"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/piratemod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.sleepykairo.piratemod.PirateMod"
+		],
+		"client": [
+			"net.sleepykairo.piratemod.PirateModClient"
+		],
+		"fabric-datagen": [
+			"net.sleepykairo.piratemod.PirateModDataGenerator"
+		]
+	},
+	"mixins": [
+		"piratemod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.9",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
