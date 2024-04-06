@@ -29,5 +29,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SPECTRAL_SWORDFISH, Models.HANDHELD);
         itemModelGenerator.register(ModItems.DIAMOND_SWORDFISH, Models.HANDHELD);
         itemModelGenerator.register(ModItems.JUNGLE_SWORDFISH, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SWORDFISH, Models.HANDHELD);
     }
 }

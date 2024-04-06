@@ -35,9 +35,11 @@ public class ModItems {
     public static final Item MOLTEN_SWORDFISH = registerItem(
             "molten_swordfish", new MoltenSwordfishItem(ModToolMaterial.SWORDFISH,7,-2.4f, new FabricItemSettings()));
     public static final Item SPECTRAL_SWORDFISH = registerItem(
-            "spectral_swordfish", new SwordItem(ModToolMaterial.SWORDFISH_FULL,7,-2.2f, new FabricItemSettings()));
+            "spectral_swordfish", new SwordItem(ModToolMaterial.SWORDFISH,6,-2.2f, new FabricItemSettings()));
     public static final Item DIAMOND_SWORDFISH = registerItem(
             "diamond_swordfish", new DiamondSwordfishItem(ModToolMaterial.SWORDFISH,7,-2.5f, new FabricItemSettings()));
     public static final Item JUNGLE_SWORDFISH = registerItem(
             "jungle_swordfish", new JungleSwordfishItem(ModToolMaterial.SWORDFISH,5,-2.5f, new FabricItemSettings()));
+    public static final Item SWORDFISH = registerItem(
+            "swordfish", new SwordItem(ModToolMaterial.SWORDFISH_FULL,8,-2.4f, new FabricItemSettings()));
 }

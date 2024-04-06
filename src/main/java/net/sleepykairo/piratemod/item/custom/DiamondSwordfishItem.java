@@ -20,21 +20,27 @@ public class DiamondSwordfishItem extends SwordItem {
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         int sharpnessLevel = EnchantmentHelper.getLevel(Enchantments.SHARPNESS, stack);
-        if (sharpnessLevel == 1) {
-            target.damage(target.getDamageSources().mobAttack(attacker), 0.25f);
-
+/*        int firstSharpnessBonus = 0;
+        if (sharpnessLevel > 0) {
+            firstSharpnessBonus = 1;
         }
-        else if (sharpnessLevel == 2) {
-            target.damage(target.getDamageSources().mobAttack(attacker), 0.5f);
-        }
-        else if (sharpnessLevel == 3) {
-            target.damage(target.getDamageSources().mobAttack(attacker), 0.75f);
-        }
-        else if (sharpnessLevel == 4) {
-            target.damage(target.getDamageSources().mobAttack(attacker), 0.1f);
-        }
-        else if (sharpnessLevel == 5) {
-            target.damage(target.getDamageSources().mobAttack(attacker), 1.5f);
+        target.damage(target.getDamageSources().mobAttack(attacker), ((0.75f * sharpnessLevel) + firstSharpnessBonus) + 7.5f);*/
+        switch (sharpnessLevel) {
+            case 1:
+                target.damage(target.getDamageSources().mobAttack(attacker), 8.5f);
+                break;
+            case 2:
+                target.damage(target.getDamageSources().mobAttack(attacker), 9.25f);
+                break;
+            case 3:
+                target.damage(target.getDamageSources().mobAttack(attacker), 10f);
+                break;
+            case 4:
+                target.damage(target.getDamageSources().mobAttack(attacker), 10.75f);
+                break;
+            case 5:
+                target.damage(target.getDamageSources().mobAttack(attacker), 11.5f);
+                break;
         }
         return super.postHit(stack, target, attacker);
     }
