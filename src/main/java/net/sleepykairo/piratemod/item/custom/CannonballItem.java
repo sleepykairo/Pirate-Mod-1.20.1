@@ -24,7 +24,7 @@ public class CannonballItem extends Item {
         if (!world.isClient) {
             CannonballProjectileEntity cannonballEntity = new CannonballProjectileEntity(user, world);
             cannonballEntity.setItem(itemStack);
-            cannonballEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 2f, 1.0f);
+            cannonballEntity.setVelocity(user, user.getPitch()-10, user.getYaw(), 0.0f, 2f, 1.0f);
             world.spawnEntity(cannonballEntity);
         }
         user.incrementStat(Stats.USED.getOrCreateStat(this));

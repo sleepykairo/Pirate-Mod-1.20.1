@@ -1,3 +1,12 @@
 {
-  "item.piratemod.cannonball": "Cannonball"
+  "item.piratemod.cannonball": "Cannonball",
+
+  "item.piratemod.sawfish": "Sawfish",
+  "item.piratemod.obsidian_sawfish": "Obsidian Sawfish",
+
+  "item.piratemod.molten_swordfish": "Molten Swordfish",
+  "item.piratemod.spectral_swordfish": "Spectral Swordfish",
+  "item.piratemod.diamond_swordfish": "Diamond Swordfish",
+  "item.piratemod.jungle_swordfish": "Jungle Swordfish"
+
 }
