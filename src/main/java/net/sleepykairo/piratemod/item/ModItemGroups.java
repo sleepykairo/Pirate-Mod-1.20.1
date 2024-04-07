@@ -15,6 +15,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.pirate"))
                     .icon(() -> new ItemStack(ModItems.CANNONBALL)).entries((displayContext, entries) -> {
                         entries.add(ModItems.CANNONBALL);
+                        entries.add(ModItems.DARTFISH);
 
                         entries.add(ModItems.GOLDFISH);
                         entries.add(ModItems.RED_SUNFISH);

@@ -49,7 +49,7 @@ public class CannonballProjectileEntity extends ThrownItemEntity {
             float power = 2f;
             float offset = 1.5f;
 
-            this.getWorld().createExplosion(this, this.getX(), this.getBodyY(0.0625), this.getZ(), power, World.ExplosionSourceType.BLOCK);
+            //this.getWorld().createExplosion(this, this.getX(), this.getBodyY(0.0625), this.getZ(), power, World.ExplosionSourceType.MOB);
             //this.getWorld().createExplosion(this, null, null, getX()-offset, this.getBodyY(0.0625), getZ(), power, false, World.ExplosionSourceType.BLOCK, false);
             //this.getWorld().createExplosion(this, null, null, getX()+offset, this.getBodyY(0.0625), getZ(), power, false, World.ExplosionSourceType.BLOCK, false);
             //this.getWorld().createExplosion(this, null, null, getX(), this.getBodyY(0.0625)-offset, getZ(), power, false, World.ExplosionSourceType.BLOCK, false);

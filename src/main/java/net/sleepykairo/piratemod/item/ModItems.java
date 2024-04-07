@@ -24,6 +24,7 @@ public class ModItems {
     }
 
     public static final Item CANNONBALL = registerItem("cannonball", new CannonballItem(new FabricItemSettings().maxCount(1)));
+    public static final Item DARTFISH = registerItem("dartfish", new DartfishItem(new FabricItemSettings().maxCount(16)));
 
     public static final Item GOLDFISH = registerItem("goldfish", new Item(new FabricItemSettings().food(ModFoodComponents.GOLDFISH)));
     public static final Item RED_SUNFISH = registerItem("red_sunfish", new Item(new FabricItemSettings().food(ModFoodComponents.RED_SUNFISH)));
