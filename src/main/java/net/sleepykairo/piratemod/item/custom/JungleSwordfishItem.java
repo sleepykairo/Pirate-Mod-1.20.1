@@ -20,8 +20,11 @@ public class JungleSwordfishItem extends SwordItem {
         if (target.getStatusEffect(StatusEffects.POISON) != null) {
             poisonStack = target.getStatusEffect(StatusEffects.POISON).getDuration();
         }
+        if (poisonStack > 300) {
+            poisonStack = 300;
+        }
 
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, (poisonStack + 40), 1), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, (poisonStack + 40), 0), attacker);
 
         return super.postHit(stack, target, attacker);
     }

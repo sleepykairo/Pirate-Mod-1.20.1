@@ -17,4 +17,6 @@ public class ModEntities {
             new Identifier(PirateMod.MOD_ID, "cannonball_projectile"),
             FabricEntityTypeBuilder.<CannonballProjectileEntity>create(SpawnGroup.MISC, CannonballProjectileEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25f, 0.25f)).build());
+
+
 }

@@ -1,12 +1,22 @@
 {
   "item.piratemod.cannonball": "Cannonball",
 
+  "item.piratemod.goldfish": "Goldfish",
+  "item.piratemod.red_sunfish": "Jasper Sunfish",
+  "item.piratemod.green_sunfish": "Jade Sunfish",
+  "item.piratemod.emerald_fish": "Emeraldfin",
+
   "item.piratemod.sawfish": "Sawfish",
   "item.piratemod.obsidian_sawfish": "Obsidian Sawfish",
 
+  "item.piratemod.swordfish": "Swordfish",
   "item.piratemod.molten_swordfish": "Molten Swordfish",
   "item.piratemod.spectral_swordfish": "Spectral Swordfish",
   "item.piratemod.diamond_swordfish": "Diamond Swordfish",
   "item.piratemod.jungle_swordfish": "Jungle Swordfish",
-  "item.piratemod.swordfish": "Swordfish"
+  "item.piratemod.nightfin_swordfish": "Nightfin Swordfish",
+
+  "item.piratemod.golden_fishing_rod": "Golden Fishing Rod",
+
+  "itemgroup.pirate": "Pirate Mod"
 }

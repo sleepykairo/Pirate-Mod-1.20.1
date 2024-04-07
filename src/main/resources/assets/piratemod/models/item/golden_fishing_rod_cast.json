@@ -1,0 +1,6 @@
+{
+  "parent": "piratemod:item/golden_fishing_rod",
+  "textures": {
+    "layer0": "piratemod:item/golden_fishing_rod_cast"
+  }
+}
