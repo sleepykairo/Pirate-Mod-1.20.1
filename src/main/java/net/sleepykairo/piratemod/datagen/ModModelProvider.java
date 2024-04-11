@@ -23,6 +23,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CANNONBALL, Models.GENERATED);
         itemModelGenerator.register(ModItems.DARTFISH, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.PLANT_MATTER, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.GOLDFISH, Models.GENERATED);
         itemModelGenerator.register(ModItems.RED_SUNFISH, Models.GENERATED);
         itemModelGenerator.register(ModItems.GREEN_SUNFISH, Models.GENERATED);
@@ -30,6 +32,8 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.SAWFISH, Models.HANDHELD);
         itemModelGenerator.register(ModItems.OBSIDIAN_SAWFISH, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.GARDENERS_HOE, Models.HANDHELD);
 
         itemModelGenerator.register(ModItems.SWORDFISH, Models.HANDHELD);
         itemModelGenerator.register(ModItems.MOLTEN_SWORDFISH, Models.HANDHELD);

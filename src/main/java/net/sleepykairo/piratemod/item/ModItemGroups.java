@@ -17,6 +17,8 @@ public class ModItemGroups {
                         entries.add(ModItems.CANNONBALL);
                         entries.add(ModItems.DARTFISH);
 
+                        entries.add(ModItems.PLANT_MATTER);
+
                         entries.add(ModItems.GOLDFISH);
                         entries.add(ModItems.RED_SUNFISH);
                         entries.add(ModItems.GREEN_SUNFISH);
@@ -31,6 +33,7 @@ public class ModItemGroups {
                         entries.add(ModItems.DIAMOND_SWORDFISH);
                         entries.add(ModItems.JUNGLE_SWORDFISH);
                         entries.add(ModItems.NIGHTFIN_SWORDFISH);
+                        entries.add(ModItems.GARDENERS_HOE);
 
                     }).build());
 

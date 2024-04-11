@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "PHP",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "piratemod:plant_matter"
+    },
+    "H": {
+      "item": "minecraft:diamond_hoe"
+    }
+  },
+  "result": {
+    "item": "piratemod:gardeners_hoe"
+  }
+}

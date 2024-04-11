@@ -11,6 +11,10 @@ public enum ModToolMaterial implements ToolMaterial {
             () -> Ingredient.ofItems(Items.BEDROCK)),
     OBSIDIAN_SAWFISH(4, 400, 12.0f, -1f, 30,
             () -> Ingredient.ofItems(Items.BEDROCK)),
+
+    GARDENERS_HOE(4, 640, 10.0f, -1f, 15,
+            () -> Ingredient.ofItems(Items.BEDROCK)),
+
     SWORDFISH(4, 250, 10.0f, -0.5f, 30,
             () -> Ingredient.ofItems(Items.BEDROCK)),
     SWORDFISH_FULL(4, 250, 10.0f, -1f, 30,

@@ -43,12 +43,13 @@ public class DartfishProjectileEntity extends ThrownItemEntity {
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
-
-        Entity entity = entityHitResult.getEntity();
-        entity.damage(this.getDamageSources().thrown(this, this.getOwner()),5f);
-        ParticleEffect particleEffect = ParticleTypes.EXPLOSION;
-        this.getWorld().addParticle(particleEffect, this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
-        this.discard();
+        if(!this.getWorld().isClient()) {
+            Entity entity = entityHitResult.getEntity();
+            entity.damage(this.getDamageSources().thrown(this, this.getOwner()),5f);
+            ParticleEffect particleEffect = ParticleTypes.EXPLOSION;
+            this.getWorld().addParticle(particleEffect, this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
+            this.discard();
+        }
     }
 
     @Override

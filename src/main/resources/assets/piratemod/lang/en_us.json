@@ -2,6 +2,8 @@
   "item.piratemod.cannonball": "Cannonball",
   "item.piratemod.dartfish": "Dartfish",
 
+  "item.piratemod.plant_matter": "Plant Matter",
+
   "item.piratemod.goldfish": "Goldfish",
   "item.piratemod.red_sunfish": "Jasper Sunfish",
   "item.piratemod.green_sunfish": "Jade Sunfish",
@@ -9,6 +11,8 @@
 
   "item.piratemod.sawfish": "Sawfish",
   "item.piratemod.obsidian_sawfish": "Obsidian Sawfish",
+
+  "item.piratemod.gardeners_hoe": "Gardener's Hoe",
 
   "item.piratemod.swordfish": "Swordfish",
   "item.piratemod.molten_swordfish": "Molten Swordfish",
@@ -18,6 +22,14 @@
   "item.piratemod.nightfin_swordfish": "Nightfin Swordfish",
 
   "item.piratemod.golden_fishing_rod": "Golden Fishing Rod",
+
+  "item.minecraft.potion.effect.frost_walker_potion": "Potion of Frost Walking",
+  "item.minecraft.splash_potion.effect.frost_walker_potion": "Splash Potion of Frost Walking",
+  "item.minecraft.lingering_potion.effect.frost_walker_potion": "Lingering Potion of Frost Walking",
+
+
+  "effect.piratemod.frost_walker_effect": "Frost Walker",
+
 
   "itemgroup.pirate": "Pirate Mod"
 }

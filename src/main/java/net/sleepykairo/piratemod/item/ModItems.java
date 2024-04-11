@@ -1,10 +1,7 @@
 package net.sleepykairo.piratemod.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.FishingRodItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -26,6 +23,8 @@ public class ModItems {
     public static final Item CANNONBALL = registerItem("cannonball", new CannonballItem(new FabricItemSettings().maxCount(1)));
     public static final Item DARTFISH = registerItem("dartfish", new DartfishItem(new FabricItemSettings().maxCount(16)));
 
+    public static final Item PLANT_MATTER = registerItem("plant_matter", new Item(new FabricItemSettings()));
+
     public static final Item GOLDFISH = registerItem("goldfish", new Item(new FabricItemSettings().food(ModFoodComponents.GOLDFISH)));
     public static final Item RED_SUNFISH = registerItem("red_sunfish", new Item(new FabricItemSettings().food(ModFoodComponents.RED_SUNFISH)));
     public static final Item GREEN_SUNFISH = registerItem("green_sunfish", new Item(new FabricItemSettings().food(ModFoodComponents.GREEN_SUNFISH)));
@@ -36,6 +35,9 @@ public class ModItems {
             "sawfish", new AxeItem(ModToolMaterial.SAWFISH,8.0f,-3f, new FabricItemSettings()));
     public static final Item OBSIDIAN_SAWFISH = registerItem(
             "obsidian_sawfish", new AxeItem(ModToolMaterial.OBSIDIAN_SAWFISH,8.5f,-3f, new FabricItemSettings()));
+
+    public static final Item GARDENERS_HOE = registerItem(
+            "gardeners_hoe", new GardenersHoeItem(ModToolMaterial.GARDENERS_HOE,1,0f, new FabricItemSettings()));
 
     public static final Item SWORDFISH = registerItem(
             "swordfish", new SwordItem(ModToolMaterial.SWORDFISH_FULL,8,-2.4f, new FabricItemSettings()));
