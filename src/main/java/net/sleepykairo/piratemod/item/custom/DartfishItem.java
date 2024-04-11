@@ -23,12 +23,12 @@ public class DartfishItem extends Item {
         ItemStack itemStack = user.getStackInHand(hand); // creates a new ItemStack instance of the user's itemStack in-hand
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 1F); // plays a globalSoundEvent
 
-		user.getItemCooldownManager().set(this, 2);
+		user.getItemCooldownManager().set(this, 4);
 
         if (!world.isClient) {
             DartfishProjectileEntity dartfishEntity = new DartfishProjectileEntity(world, user);
-            dartfishEntity.setItem(itemStack);
-            dartfishEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 0F);
+            //dartfishEntity.setItem(itemStack);
+            dartfishEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 2.5F, 0F);
                         /*
                         snowballEntity.setProperties(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);
                         In 1.17,we will use setProperties instead of setVelocity.
