@@ -23,8 +23,8 @@ public class BlokeEntity extends HostileEntity {
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new AttackGoal(this));
-        this.goalSelector.add(1, new WanderAroundGoal(this, 5));
-        this.goalSelector.add(1, new WanderAroundFarGoal(this, 10));
+        this.goalSelector.add(2, new WanderAroundGoal(this, 5));
+        this.goalSelector.add(3, new WanderAroundFarGoal(this, 10));
     }
 
     public static DefaultAttributeContainer.Builder createBlokeAttributes() {

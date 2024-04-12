@@ -24,6 +24,11 @@ public class ModItems {
     public static final Item DARTFISH = registerItem("dartfish", new DartfishItem(new FabricItemSettings().maxCount(16)));
 
     public static final Item PLANT_MATTER = registerItem("plant_matter", new Item(new FabricItemSettings()));
+    public static final Item FROST_INGOT = registerItem("frost_ingot", new Item(new FabricItemSettings()));
+    public static final Item FIRE_INGOT = registerItem("fire_ingot", new Item(new FabricItemSettings()));
+    public static final Item PLANT_INGOT = registerItem("plant_ingot", new Item(new FabricItemSettings()));
+    public static final Item STORM_INGOT = registerItem("storm_ingot", new Item(new FabricItemSettings()));
+    public static final Item OCEAN_INGOT = registerItem("ocean_ingot", new Item(new FabricItemSettings()));
 
     public static final Item GOLDFISH = registerItem("goldfish", new Item(new FabricItemSettings().food(ModFoodComponents.GOLDFISH)));
     public static final Item RED_SUNFISH = registerItem("red_sunfish", new Item(new FabricItemSettings().food(ModFoodComponents.RED_SUNFISH)));
