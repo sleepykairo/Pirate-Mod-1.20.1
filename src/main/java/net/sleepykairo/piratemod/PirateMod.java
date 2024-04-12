@@ -2,13 +2,21 @@ package net.sleepykairo.piratemod;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.minecraft.block.DispenserBlock;
+import net.minecraft.block.dispenser.ProjectileDispenserBehavior;
+import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Util;
+import net.minecraft.util.math.Position;
+import net.minecraft.world.World;
 import net.sleepykairo.piratemod.blocks.ModBlocks;
-import net.sleepykairo.piratemod.effect.FrostWalkerEffect;
 import net.sleepykairo.piratemod.effect.ModEffects;
+import net.sleepykairo.piratemod.entity.ModEntities;
+import net.sleepykairo.piratemod.entity.custom.BlokeEntity;
+import net.sleepykairo.piratemod.entity.custom.CannonballProjectileEntity;
+import net.sleepykairo.piratemod.entity.custom.DartfishProjectileEntity;
 import net.sleepykairo.piratemod.item.ModItemGroups;
 import net.sleepykairo.piratemod.item.ModItems;
 import net.sleepykairo.piratemod.potion.ModPotions;
@@ -30,5 +38,26 @@ public class PirateMod implements ModInitializer {
 
 		ModEffects.registerEffects();
 		ModPotions.registerPotions();
+
+		FabricDefaultAttributeRegistry.register(ModEntities.BlOKE, BlokeEntity.createBlokeAttributes());
+
+		DispenserBlock.registerBehavior(ModItems.DARTFISH, new ProjectileDispenserBehavior(){
+
+			@Override
+			protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+				DartfishProjectileEntity persistentProjectileEntity = new DartfishProjectileEntity(world, position.getX(), position.getY(), position.getZ());
+				persistentProjectileEntity.pickupType = PersistentProjectileEntity.PickupPermission.ALLOWED;
+				return persistentProjectileEntity;
+				//return Util.make(new DartfishProjectileEntity(world, position.getX(), position.getY(), position.getZ()), entity -> entity.pickupType = PersistentProjectileEntity.PickupPermission.ALLOWED);
+			}
+		});
+
+		DispenserBlock.registerBehavior(ModItems.CANNONBALL, new ProjectileDispenserBehavior(){
+
+			@Override
+			protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
+				return Util.make(new CannonballProjectileEntity(world, position.getX(), position.getY(), position.getZ()), entity -> entity.setItem(stack));
+			}
+		});
 	}
 }

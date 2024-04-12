@@ -30,6 +30,10 @@ public class CannonballProjectileEntity extends ThrownItemEntity {
         super(ModEntities.CANNONBALL_PROJECTILE, livingEntity, world);
     }
 
+    public CannonballProjectileEntity(World world, double x, double y, double z) {
+        super((EntityType<? extends ThrownItemEntity>)ModEntities.CANNONBALL_PROJECTILE, x, y, z, world);
+    }
+
     @Override
     protected Item getDefaultItem() {
         return ModItems.CANNONBALL;
@@ -46,10 +50,10 @@ public class CannonballProjectileEntity extends ThrownItemEntity {
         if(!this.getWorld().isClient()){
             this.getWorld().sendEntityStatus(this, (byte)3);
 
-            float power = 2f;
+            float power = 1f;
             float offset = 1.5f;
 
-            //this.getWorld().createExplosion(this, this.getX(), this.getBodyY(0.0625), this.getZ(), power, World.ExplosionSourceType.MOB);
+            this.getWorld().createExplosion(this, this.getX(), this.getBodyY(0.0625), this.getZ(), power, World.ExplosionSourceType.MOB);
             //this.getWorld().createExplosion(this, null, null, getX()-offset, this.getBodyY(0.0625), getZ(), power, false, World.ExplosionSourceType.BLOCK, false);
             //this.getWorld().createExplosion(this, null, null, getX()+offset, this.getBodyY(0.0625), getZ(), power, false, World.ExplosionSourceType.BLOCK, false);
             //this.getWorld().createExplosion(this, null, null, getX(), this.getBodyY(0.0625)-offset, getZ(), power, false, World.ExplosionSourceType.BLOCK, false);

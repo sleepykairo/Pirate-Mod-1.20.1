@@ -31,7 +31,7 @@ public class DartfishProjectileEntity extends PersistentProjectileEntity {
     }
 
     public DartfishProjectileEntity(World world, double x, double y, double z) {
-        super(EntityType.ARROW, x, y, z, world);
+        super(ModEntities.DARTFISH_PROJECTILE, x, y, z, world);
     }
 
     public DartfishProjectileEntity(World world, LivingEntity owner) {
