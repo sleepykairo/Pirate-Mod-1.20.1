@@ -5,6 +5,8 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.ProjectileDispenserBehavior;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
@@ -20,6 +22,8 @@ import net.sleepykairo.piratemod.entity.client.BlokeModel;
 import net.sleepykairo.piratemod.entity.custom.CannonballProjectileEntity;
 import net.sleepykairo.piratemod.entity.custom.DartfishProjectileEntity;
 import net.sleepykairo.piratemod.item.ModItems;
+import net.sleepykairo.piratemod.screen.AlchemyTableScreen;
+import net.sleepykairo.piratemod.screen.ModScreenHandlers;
 import net.sleepykairo.piratemod.util.ModModelPredicateProvider;
 
 public class PirateModClient implements ClientModInitializer {
@@ -32,5 +36,7 @@ public class PirateModClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.CANNONBALL_PROJECTILE, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.DARTFISH_PROJECTILE, DartfishProjectileEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.BlOKE, BlokeRenderer::new);
+
+        HandledScreens.register(ModScreenHandlers.ALCHEMY_TABLE_SCREEN_HANDLER, AlchemyTableScreen::new);
     }
 }

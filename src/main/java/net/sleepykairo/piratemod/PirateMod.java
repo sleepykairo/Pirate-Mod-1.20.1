@@ -12,6 +12,7 @@ import net.minecraft.util.Util;
 import net.minecraft.util.math.Position;
 import net.minecraft.world.World;
 import net.sleepykairo.piratemod.blocks.ModBlocks;
+import net.sleepykairo.piratemod.blocks.entity.ModBlockEntities;
 import net.sleepykairo.piratemod.effect.ModEffects;
 import net.sleepykairo.piratemod.entity.ModEntities;
 import net.sleepykairo.piratemod.entity.custom.BlokeEntity;
@@ -20,6 +21,7 @@ import net.sleepykairo.piratemod.entity.custom.DartfishProjectileEntity;
 import net.sleepykairo.piratemod.item.ModItemGroups;
 import net.sleepykairo.piratemod.item.ModItems;
 import net.sleepykairo.piratemod.potion.ModPotions;
+import net.sleepykairo.piratemod.screen.ModScreenHandlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,6 +41,9 @@ public class PirateMod implements ModInitializer {
 		ModEffects.registerEffects();
 		ModPotions.registerPotions();
 
+		ModBlockEntities.registerBlockEntities();
+		ModScreenHandlers.registerScreenHandlers();
+
 		FabricDefaultAttributeRegistry.register(ModEntities.BlOKE, BlokeEntity.createBlokeAttributes());
 
 		DispenserBlock.registerBehavior(ModItems.DARTFISH, new ProjectileDispenserBehavior(){
@@ -47,6 +52,7 @@ public class PirateMod implements ModInitializer {
 			protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
 				DartfishProjectileEntity persistentProjectileEntity = new DartfishProjectileEntity(world, position.getX(), position.getY(), position.getZ());
 				persistentProjectileEntity.pickupType = PersistentProjectileEntity.PickupPermission.ALLOWED;
+				persistentProjectileEntity.setVelocity(0.0f, 10.5f, 1.0f);
 				return persistentProjectileEntity;
 				//return Util.make(new DartfishProjectileEntity(world, position.getX(), position.getY(), position.getZ()), entity -> entity.pickupType = PersistentProjectileEntity.PickupPermission.ALLOWED);
 			}

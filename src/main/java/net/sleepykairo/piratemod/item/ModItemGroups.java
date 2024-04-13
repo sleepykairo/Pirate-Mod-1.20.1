@@ -8,6 +8,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.sleepykairo.piratemod.PirateMod;
+import net.sleepykairo.piratemod.blocks.ModBlocks;
 
 public class ModItemGroups {
     public static final ItemGroup PIRATE_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -39,6 +40,8 @@ public class ModItemGroups {
                         entries.add(ModItems.JUNGLE_SWORDFISH);
                         entries.add(ModItems.NIGHTFIN_SWORDFISH);
                         entries.add(ModItems.GARDENERS_HOE);
+
+                        entries.add(ModBlocks.ALCHEMY_TABLE);
 
                     }).build());
 

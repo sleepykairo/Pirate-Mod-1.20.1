@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FrostedIceBlock;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
@@ -25,12 +26,11 @@ public class FrostWalkerEffect extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         freezeWater(entity, entity.getWorld(), entity.getBlockPos(), amplifier);
-        entity.heal(1);
         super.applyUpdateEffect(entity, amplifier);
     }
 
     public static void freezeWater(LivingEntity entity, World world, BlockPos blockPos, int level) {
-        if (!entity.isOnGround()) {
+        if (!entity.isOnGround() || entity.getType() != EntityType.PLAYER) {
             return;
         }
         BlockState blockState = Blocks.FROSTED_ICE.getDefaultState();

@@ -28,9 +28,8 @@
 
   "item.piratemod.golden_fishing_rod": "Golden Fishing Rod",
 
-  "item.minecraft.potion.effect.frost_walker_potion": "Potion of Frost Walking",
-  "item.minecraft.splash_potion.effect.frost_walker_potion": "Splash Potion of Frost Walking",
-  "item.minecraft.lingering_potion.effect.frost_walker_potion": "Lingering Potion of Frost Walking",
+
+  "block.piratemod.alchemy_table": "Alchemy Table",
 
 
   "effect.piratemod.frost_walker_effect": "Frost Walker",

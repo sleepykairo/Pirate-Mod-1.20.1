@@ -11,11 +11,15 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.sleepykairo.piratemod.PirateMod;
+import net.sleepykairo.piratemod.blocks.custom.AlchemyTableBlock;
 
 public class ModBlocks {
 
+    public static final Block ALCHEMY_TABLE = registerBlock("alchemy_table",
+            new AlchemyTableBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
     private static Block registerBlock(String name, Block block) {
-        registerBlock(name, block);
+        registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(PirateMod.MOD_ID, name), block);
     }
 
