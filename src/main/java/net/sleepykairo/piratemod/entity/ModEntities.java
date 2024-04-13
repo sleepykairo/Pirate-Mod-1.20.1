@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 import net.sleepykairo.piratemod.entity.custom.BlokeEntity;
 import net.sleepykairo.piratemod.entity.custom.CannonballProjectileEntity;
 import net.sleepykairo.piratemod.entity.custom.DartfishProjectileEntity;
+import net.sleepykairo.piratemod.entity.custom.PoisonDartfishProjectileEntity;
 
 public class ModEntities {
 
@@ -23,7 +24,10 @@ public class ModEntities {
             new Identifier(PirateMod.MOD_ID, "dartfish_projectile"),
             FabricEntityTypeBuilder.<DartfishProjectileEntity>create(SpawnGroup.MISC, DartfishProjectileEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25f, 0.25f)).trackRangeBlocks(4).trackedUpdateRate(10).build());
-
+    public static final EntityType<PoisonDartfishProjectileEntity> POISON_DARTFISH_PROJECTILE = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(PirateMod.MOD_ID, "poison_dartfish_projectile"),
+            FabricEntityTypeBuilder.<PoisonDartfishProjectileEntity>create(SpawnGroup.MISC, PoisonDartfishProjectileEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.25f, 0.25f)).trackRangeBlocks(4).trackedUpdateRate(10).build());
 
     public static final EntityType<BlokeEntity> BlOKE = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(PirateMod.MOD_ID, "bloke"),

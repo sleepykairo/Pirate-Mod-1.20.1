@@ -23,6 +23,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.CANNONBALL, Models.GENERATED);
         itemModelGenerator.register(ModItems.DARTFISH, Models.GENERATED);
+        itemModelGenerator.register(ModItems.POISON_DARTFISH, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.PLANT_MATTER, Models.GENERATED);
         itemModelGenerator.register(ModItems.CATALYST, Models.GENERATED);

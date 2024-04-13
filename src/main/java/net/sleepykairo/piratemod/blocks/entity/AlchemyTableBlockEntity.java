@@ -33,6 +33,9 @@ public class AlchemyTableBlockEntity extends BlockEntity implements ExtendedScre
     private int maxProgress = 600;
 
     private int fuel = 0;
+    private int fuelMax = 1200;
+
+    private boolean fuelActive = false;
 
     public AlchemyTableBlockEntity( BlockPos pos, BlockState state) {
         super(ModBlockEntities.ALCHEMY_TABLE_BLOCK_ENTITY, pos, state);
@@ -42,6 +45,8 @@ public class AlchemyTableBlockEntity extends BlockEntity implements ExtendedScre
                 return switch (index) {
                     case 0 -> AlchemyTableBlockEntity.this.progress;
                     case 1 -> AlchemyTableBlockEntity.this.maxProgress;
+                    case 2 -> AlchemyTableBlockEntity.this.fuel;
+                    case 3 -> AlchemyTableBlockEntity.this.fuelMax;
                     default -> 0;
                 };
             }
@@ -51,6 +56,8 @@ public class AlchemyTableBlockEntity extends BlockEntity implements ExtendedScre
                 switch (index) {
                     case 0 -> AlchemyTableBlockEntity.this.progress = value;
                     case 1 -> AlchemyTableBlockEntity.this.maxProgress = value;
+                    case 2 -> AlchemyTableBlockEntity.this.fuel = value;
+                    case 3 -> AlchemyTableBlockEntity.this.fuelMax = value;
                 }
             }
 
@@ -81,6 +88,7 @@ public class AlchemyTableBlockEntity extends BlockEntity implements ExtendedScre
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("alchemy_table.progress", progress);
+        nbt.putInt("alchemy_table.fuel", fuel);
     }
 
     @Override
@@ -88,6 +96,7 @@ public class AlchemyTableBlockEntity extends BlockEntity implements ExtendedScre
         super.readNbt(nbt);
         Inventories.readNbt(nbt, inventory);
         nbt.getInt("alchemy_table.progress");
+        nbt.getInt("alchemy_table.fuel");
     }
 
     @Nullable
@@ -102,8 +111,13 @@ public class AlchemyTableBlockEntity extends BlockEntity implements ExtendedScre
 
         updateFuel();
 
+        if(fuelActive) {
+            fuel--;
+        }
+
         if(isOutputSlotEmptyOrReceivable()) {
             if(this.hasRecipe() && this.hasFuel()) {
+                fuelActive = true;
                 this.increaseCraftProgress();
                 markDirty(world, pos, state);
 
@@ -132,7 +146,7 @@ public class AlchemyTableBlockEntity extends BlockEntity implements ExtendedScre
         ItemStack result = new ItemStack(ModItems.PLANT_INGOT);
 
         this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
-        fuel -= 600;
+        //fuel -= fuelMax / 2;
     }
 
     private boolean hasCraftingFinished() {
@@ -149,7 +163,8 @@ public class AlchemyTableBlockEntity extends BlockEntity implements ExtendedScre
 
     private void updateFuel() {
         if(hasFuelInSlot() && !hasFuel()) {
-            fuel = 1200;
+            fuelActive = false;
+            fuel = fuelMax;
             this.removeStack(FUEL_SLOT, 1);
         }
     }

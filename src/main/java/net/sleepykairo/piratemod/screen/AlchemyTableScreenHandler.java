@@ -11,6 +11,7 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
+import net.sleepykairo.piratemod.PirateMod;
 import net.sleepykairo.piratemod.blocks.entity.AlchemyTableBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
@@ -51,9 +52,21 @@ public class AlchemyTableScreenHandler extends ScreenHandler {
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);  // Max Progress
-        int progressArrowSize = 16; // This is the width in pixels of your arrow
+        int progressArrowSize = 17; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public int getScaledFuelProgress() {
+        float fuel = this.propertyDelegate.get(2);
+        float fuelMax = this.propertyDelegate.get(3);
+        int fireSize = 32;
+
+        return Math.round((fuel / fuelMax) * fireSize);
+    }
+
+    public int getFuel() {
+        return this.propertyDelegate.get(2);
     }
 
     @Override

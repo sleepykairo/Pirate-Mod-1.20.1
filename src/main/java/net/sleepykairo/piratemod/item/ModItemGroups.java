@@ -17,6 +17,7 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.CANNONBALL)).entries((displayContext, entries) -> {
                         entries.add(ModItems.CANNONBALL);
                         entries.add(ModItems.DARTFISH);
+                        entries.add(ModItems.POISON_DARTFISH);
 
                         entries.add(ModItems.PLANT_MATTER);
                         entries.add(ModItems.CATALYST);

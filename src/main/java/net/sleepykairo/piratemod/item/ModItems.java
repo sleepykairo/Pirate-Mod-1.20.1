@@ -22,6 +22,7 @@ public class ModItems {
 
     public static final Item CANNONBALL = registerItem("cannonball", new CannonballItem(new FabricItemSettings().maxCount(1)));
     public static final Item DARTFISH = registerItem("dartfish", new DartfishItem(new FabricItemSettings().maxCount(16)));
+    public static final Item POISON_DARTFISH = registerItem("poison_dartfish", new PoisonDartfishItem(new FabricItemSettings().maxCount(16)));
 
     public static final Item PLANT_MATTER = registerItem("plant_matter", new Item(new FabricItemSettings()));
     public static final Item CATALYST = registerItem("catalyst", new Item(new FabricItemSettings()));
