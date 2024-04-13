@@ -30,7 +30,9 @@ public class AlchemyTableBlockEntity extends BlockEntity implements ExtendedScre
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 72;
+    private int maxProgress = 600;
+
+    private int fuel = 0;
 
     public AlchemyTableBlockEntity( BlockPos pos, BlockState state) {
         super(ModBlockEntities.ALCHEMY_TABLE_BLOCK_ENTITY, pos, state);
@@ -98,8 +100,10 @@ public class AlchemyTableBlockEntity extends BlockEntity implements ExtendedScre
             return;
         }
 
+        updateFuel();
+
         if(isOutputSlotEmptyOrReceivable()) {
-            if(this.hasRecipe()) {
+            if(this.hasRecipe() && this.hasFuel()) {
                 this.increaseCraftProgress();
                 markDirty(world, pos, state);
 
@@ -128,10 +132,26 @@ public class AlchemyTableBlockEntity extends BlockEntity implements ExtendedScre
         ItemStack result = new ItemStack(ModItems.PLANT_INGOT);
 
         this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
+        fuel -= 600;
     }
 
     private boolean hasCraftingFinished() {
         return progress >= maxProgress;
+    }
+
+    private boolean hasFuel() {
+        return fuel > 0;
+    }
+
+    private boolean hasFuelInSlot() {
+        return getStack(FUEL_SLOT).getItem() == ModItems.CATALYST;
+    }
+
+    private void updateFuel() {
+        if(hasFuelInSlot() && !hasFuel()) {
+            fuel = 1200;
+            this.removeStack(FUEL_SLOT, 1);
+        }
     }
 
     private void increaseCraftProgress() {

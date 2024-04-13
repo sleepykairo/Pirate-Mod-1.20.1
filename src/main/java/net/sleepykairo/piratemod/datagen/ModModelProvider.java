@@ -25,11 +25,15 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.DARTFISH, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.PLANT_MATTER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CATALYST, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.FROST_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.FIRE_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.PLANT_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.STORM_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.OCEAN_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DARK_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LIGHT_INGOT, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.GOLDFISH, Models.GENERATED);
         itemModelGenerator.register(ModItems.RED_SUNFISH, Models.GENERATED);

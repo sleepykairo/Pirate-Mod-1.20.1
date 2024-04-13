@@ -19,11 +19,15 @@ public class ModItemGroups {
                         entries.add(ModItems.DARTFISH);
 
                         entries.add(ModItems.PLANT_MATTER);
+                        entries.add(ModItems.CATALYST);
+
                         entries.add(ModItems.FROST_INGOT);
                         entries.add(ModItems.FIRE_INGOT);
                         entries.add(ModItems.PLANT_INGOT);
                         entries.add(ModItems.STORM_INGOT);
                         entries.add(ModItems.OCEAN_INGOT);
+                        entries.add(ModItems.DARK_INGOT);
+                        entries.add(ModItems.LIGHT_INGOT);
 
                         entries.add(ModItems.GOLDFISH);
                         entries.add(ModItems.RED_SUNFISH);
