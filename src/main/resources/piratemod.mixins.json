@@ -3,7 +3,10 @@
 	"package": "net.sleepykairo.piratemod.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"FishingBobberAccessor",
+		"FishingBobberValidityMixin",
+		"FishingBobberRendererMixin",
+      	"TestingMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

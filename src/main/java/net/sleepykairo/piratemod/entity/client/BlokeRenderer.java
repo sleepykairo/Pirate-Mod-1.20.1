@@ -18,4 +18,10 @@ public class BlokeRenderer extends MobEntityRenderer<BlokeEntity, BlokeModel<Blo
     public Identifier getTexture(BlokeEntity entity) {
         return TEXTURE;
     }
+
+/*    @Override
+    protected void scale(BlokeEntity entity, MatrixStack matrices, float amount) {
+        float f = entity.getHealth() + 1;
+        matrices.scale(f, f, f);
+    }*/
 }

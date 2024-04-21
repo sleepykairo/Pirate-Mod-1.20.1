@@ -2,14 +2,16 @@ package net.sleepykairo.piratemod.entity.custom;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.AttackGoal;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
-import net.minecraft.entity.ai.goal.WanderAroundGoal;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.mob.VindicatorEntity;
+import net.minecraft.entity.passive.ChickenEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 
 public class BlokeEntity extends HostileEntity {
@@ -25,6 +27,9 @@ public class BlokeEntity extends HostileEntity {
         this.goalSelector.add(1, new AttackGoal(this));
         this.goalSelector.add(2, new WanderAroundGoal(this, 5));
         this.goalSelector.add(3, new WanderAroundFarGoal(this, 10));
+
+        this.targetSelector.add(1, new ActiveTargetGoal<ChickenEntity>((MobEntity)this, ChickenEntity.class, true));
+        this.targetSelector.add(2, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
     }
 
     public static DefaultAttributeContainer.Builder createBlokeAttributes() {
@@ -34,5 +39,10 @@ public class BlokeEntity extends HostileEntity {
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 100)
                 .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 10)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 1);
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.BLOCK_BELL_USE;
     }
 }

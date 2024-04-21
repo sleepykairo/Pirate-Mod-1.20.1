@@ -17,6 +17,8 @@ public class ModBlocks {
 
     public static final Block ALCHEMY_TABLE = registerBlock("alchemy_table",
             new AlchemyTableBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+    public static final Block BOX_OF_GOLDFISH = registerBlock("box_of_goldfish",
+            new AlchemyTableBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

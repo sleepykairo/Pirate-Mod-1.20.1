@@ -15,6 +15,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
+import net.sleepykairo.piratemod.PirateMod;
 
 public class GoldenFishingRodItem extends Item implements Vanishable {
     public GoldenFishingRodItem(Item.Settings settings) {
@@ -28,6 +29,7 @@ public class GoldenFishingRodItem extends Item implements Vanishable {
             if (!world.isClient) {
                 int i = user.fishHook.use(itemStack);
                 itemStack.damage(i, user, p -> p.sendToolBreakStatus(hand));
+                PirateMod.LOGGER.info("fishhook != null");
             }
             world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_FISHING_BOBBER_RETRIEVE, SoundCategory.NEUTRAL, 1.0f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
             //user.emitGameEvent(GameEvent.ITEM_INTERACT_FINISH);

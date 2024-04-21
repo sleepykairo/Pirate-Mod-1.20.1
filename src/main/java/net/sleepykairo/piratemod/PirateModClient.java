@@ -17,9 +17,7 @@ import net.minecraft.world.World;
 import net.sleepykairo.piratemod.client.render.entity.DartfishProjectileEntityRenderer;
 import net.sleepykairo.piratemod.client.render.entity.PoisonDartfishProjectileEntityRenderer;
 import net.sleepykairo.piratemod.entity.ModEntities;
-import net.sleepykairo.piratemod.entity.client.BlokeRenderer;
-import net.sleepykairo.piratemod.entity.client.ModModelLayers;
-import net.sleepykairo.piratemod.entity.client.BlokeModel;
+import net.sleepykairo.piratemod.entity.client.*;
 import net.sleepykairo.piratemod.entity.custom.CannonballProjectileEntity;
 import net.sleepykairo.piratemod.entity.custom.DartfishProjectileEntity;
 import net.sleepykairo.piratemod.entity.custom.PoisonDartfishProjectileEntity;
@@ -34,11 +32,13 @@ public class PirateModClient implements ClientModInitializer {
         ModModelPredicateProvider.registerModModels();
 
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BLOKE, BlokeModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.GHOST, GhostModel::getTexturedModelData);
 
         EntityRendererRegistry.register(ModEntities.CANNONBALL_PROJECTILE, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.DARTFISH_PROJECTILE, DartfishProjectileEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.POISON_DARTFISH_PROJECTILE, PoisonDartfishProjectileEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.BlOKE, BlokeRenderer::new);
+        EntityRendererRegistry.register(ModEntities.GHOST, GhostRenderer::new);
 
         HandledScreens.register(ModScreenHandlers.ALCHEMY_TABLE_SCREEN_HANDLER, AlchemyTableScreen::new);
     }

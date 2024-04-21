@@ -1,5 +1,6 @@
 package net.sleepykairo.piratemod.util;
 
+import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.FishingRodItem;
@@ -27,5 +28,4 @@ public class ModModelPredicateProvider {
             return (bl || bl2) && entity instanceof PlayerEntity && ((PlayerEntity)entity).fishHook != null ? 1.0f : 0.0f;
         });
     }
-
 }

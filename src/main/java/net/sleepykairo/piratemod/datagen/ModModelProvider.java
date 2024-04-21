@@ -2,9 +2,11 @@ package net.sleepykairo.piratemod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
+import net.minecraft.data.client.*;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.math.Direction;
+import net.minecraft.world.border.WorldBorder;
+import net.sleepykairo.piratemod.PirateMod;
 import net.sleepykairo.piratemod.blocks.ModBlocks;
 import net.sleepykairo.piratemod.item.ModItems;
 
@@ -16,6 +18,10 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ALCHEMY_TABLE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BOX_OF_GOLDFISH);
+/*        blockStateModelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(ModBlocks.ALCHEMY_TABLE)
+                .with(When.create().set(Properties.HORIZONTAL_FACING, Direction.NORTH),
+                        BlockStateVariant.create().put(VariantSettings.X, VariantSettings.Rotation.R0)));*/
     }
 
     @Override

@@ -13,6 +13,10 @@ public class ModBlockEntities {
             Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(PirateMod.MOD_ID, "alchemy_table_be"),
                     FabricBlockEntityTypeBuilder.create(AlchemyTableBlockEntity::new,
                             ModBlocks.ALCHEMY_TABLE).build(null));
+    public static final BlockEntityType<BoxOfGoldfishBlockEntity> BOX_OF_GOLDFISH_BLOCK_ENTITY =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(PirateMod.MOD_ID, "box_of_goldfish_be"),
+                    FabricBlockEntityTypeBuilder.create(BoxOfGoldfishBlockEntity::new,
+                            ModBlocks.BOX_OF_GOLDFISH).build(null));
 
     public static void registerBlockEntities() {
         PirateMod.LOGGER.info("Registering Block Entities for " + PirateMod.MOD_ID);

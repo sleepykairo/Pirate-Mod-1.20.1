@@ -7,4 +7,7 @@ import net.sleepykairo.piratemod.PirateMod;
 public class ModModelLayers {
     public static final EntityModelLayer BLOKE =
             new EntityModelLayer(new Identifier(PirateMod.MOD_ID, "bloke"), "main");
+
+    public static final EntityModelLayer GHOST =
+            new EntityModelLayer(new Identifier(PirateMod.MOD_ID, "ghost"), "main");
 }

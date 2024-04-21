@@ -1,15 +1,15 @@
 package net.sleepykairo.piratemod.blocks.custom;
 
-import net.minecraft.block.BlockEntityProvider;
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.BrewingStandBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
@@ -21,6 +21,8 @@ import net.sleepykairo.piratemod.blocks.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 
 public class AlchemyTableBlock extends BlockWithEntity implements BlockEntityProvider {
+    public static final DirectionProperty FACING = FacingBlock.FACING;
+    public static final BooleanProperty LIT = Properties.LIT;
     public AlchemyTableBlock(Settings settings) {
         super(settings);
     }
