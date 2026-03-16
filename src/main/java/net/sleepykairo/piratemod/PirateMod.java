@@ -15,10 +15,7 @@ import net.sleepykairo.piratemod.blocks.ModBlocks;
 import net.sleepykairo.piratemod.blocks.entity.ModBlockEntities;
 import net.sleepykairo.piratemod.effect.ModEffects;
 import net.sleepykairo.piratemod.entity.ModEntities;
-import net.sleepykairo.piratemod.entity.custom.BlokeEntity;
-import net.sleepykairo.piratemod.entity.custom.CannonballProjectileEntity;
-import net.sleepykairo.piratemod.entity.custom.DartfishProjectileEntity;
-import net.sleepykairo.piratemod.entity.custom.GhostEntity;
+import net.sleepykairo.piratemod.entity.custom.*;
 import net.sleepykairo.piratemod.item.ModItemGroups;
 import net.sleepykairo.piratemod.item.ModItems;
 import net.sleepykairo.piratemod.potion.ModPotions;
@@ -49,6 +46,7 @@ public class PirateMod implements ModInitializer {
 
 		FabricDefaultAttributeRegistry.register(ModEntities.BlOKE, BlokeEntity.createBlokeAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.GHOST, GhostEntity.createGhostAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.CHARRED_GHAST, CharredGhastEntity.createCharredGhastAttributes());
 
 		DispenserBlock.registerBehavior(ModItems.DARTFISH, new ProjectileDispenserBehavior(){
 
@@ -67,6 +65,16 @@ public class PirateMod implements ModInitializer {
 			@Override
 			protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
 				return Util.make(new CannonballProjectileEntity(world, position.getX(), position.getY(), position.getZ()), entity -> entity.setItem(stack));
+			}
+
+			@Override
+			protected float getForce() {
+				return 3f;
+			}
+
+			@Override
+			protected float getVariation() {
+				return 0;
 			}
 		});
 	}

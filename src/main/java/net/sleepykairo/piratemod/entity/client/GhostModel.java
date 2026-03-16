@@ -4,12 +4,13 @@ import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.Entity;
 import net.sleepykairo.piratemod.entity.custom.GhostEntity;
 
 // Made with Blockbench 4.9.3
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
-public class GhostModel<T extends GhostEntity> extends SinglePartEntityModel<T> {
+public class GhostModel<T extends Entity> extends SinglePartEntityModel<T> {
 	private final ModelPart Body;
 	public GhostModel(ModelPart root) {
 		this.Body = root.getChild("Body");
@@ -44,8 +45,9 @@ public class GhostModel<T extends GhostEntity> extends SinglePartEntityModel<T> 
 		return null;
 	}
 
+
 	@Override
-	public void setAngles(GhostEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+	public void setAngles(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 
 	}
 }

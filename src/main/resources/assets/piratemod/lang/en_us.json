@@ -5,6 +5,7 @@
 
   "item.piratemod.plant_matter": "Plant Matter",
   "item.piratemod.catalyst": "Soul Catalyst",
+  "item.piratemod.musket_ball": "Musket Ball",
 
   "item.piratemod.frost_ingot": "Frigid Essence",
   "item.piratemod.fire_ingot": "Infernal Essence",
@@ -30,8 +31,19 @@
   "item.piratemod.diamond_swordfish": "Diamond Swordfish",
   "item.piratemod.jungle_swordfish": "Jungle Swordfish",
   "item.piratemod.nightfin_swordfish": "Nightfin Swordfish",
+  "item.piratemod.storm_sword": "Stormbringer's Sword",
+  "item.piratemod.sea_sword": "Mariner's Sword",
+  "item.piratemod.bone_sword": "Skeletal Sword",
 
   "item.piratemod.golden_fishing_rod": "Golden Fishing Rod",
+
+  "item.piratemod.flintlock": "Flintlock",
+  "item.piratemod.musket": "Musket",
+
+  "item.piratemod.sea_helmet": "Mariner's Helmet",
+  "item.piratemod.sea_chestplate": "Mariner's Chestplate",
+  "item.piratemod.sea_leggings": "Mariner's Leggings",
+  "item.piratemod.sea_boots": "Mariner's Boots",
 
 
   "block.piratemod.alchemy_table": "Alchemy Table",

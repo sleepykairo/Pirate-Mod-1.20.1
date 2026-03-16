@@ -8,10 +8,19 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import net.sleepykairo.piratemod.item.ModItems;
+import net.sleepykairo.piratemod.item.custom.BoneSwordItem;
+import net.sleepykairo.piratemod.item.custom.StormSwordItem;
 
 public class ModModelPredicateProvider {
     public static void registerModModels() {
         registerFishingRod(ModItems.GOLDEN_FISHING_ROD);
+
+        ModelPredicateProviderRegistry.register(ModItems.STORM_SWORD, new Identifier("charged"), (stack, world, entity, seed) ->
+                StormSwordItem.isCharged(stack) ? 1.0f : 0.0f);
+        ModelPredicateProviderRegistry.register(ModItems.BONE_SWORD, new Identifier("firetime"), (stack, world, entity, seed) ->
+                (float) BoneSwordItem.getFireTime(stack) / BoneSwordItem.MAX_FIRE_TIME);
+        ModelPredicateProviderRegistry.register(ModItems.BONE_SWORD, new Identifier("active"), (stack, world, entity, seed) ->
+                BoneSwordItem.getActive(stack) ? 1.0f : 0.0f);
     }
 
     private static void registerFishingRod(Item fishingRod) {

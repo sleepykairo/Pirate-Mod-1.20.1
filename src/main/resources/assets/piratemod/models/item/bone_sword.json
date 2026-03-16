@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "piratemod:item/bone_sword"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "active": 0.0
+      },
+      "model": "piratemod:item/bone_sword"
+    },
+    {
+      "predicate": {
+        "active": 1.0
+      },
+      "model": "piratemod:item/bone_sword_fire"
+    }
+  ]
+}

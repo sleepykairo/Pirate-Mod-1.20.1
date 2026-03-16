@@ -17,21 +17,11 @@ import net.sleepykairo.piratemod.PirateMod;
 
 import java.lang.annotation.Target;
 
-public class GhostEntity extends HostileEntity {
+public class GhostEntity extends VexEntity {
 
 
     public GhostEntity(EntityType<? extends GhostEntity> entityType, World world) {
         super(entityType, world);
-    }
-
-    @Override
-    protected void initGoals() {
-        this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(2, new AttackGoal(this));
-        this.goalSelector.add(3, new WanderAroundGoal(this, 0.2f));
-        //this.goalSelector.add(4, new WanderAroundFarGoal(this, 0.2f));
-
-        this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
     }
 
     public static DefaultAttributeContainer.Builder createGhostAttributes() {
@@ -46,31 +36,5 @@ public class GhostEntity extends HostileEntity {
     @Override
     protected SoundEvent getDeathSound() {
         return SoundEvents.BLOCK_BELL_USE;
-    }
-
-    @Override
-    public void tickMovement() {
-        if (this.getTarget() != null) {
-            if (getTargetY() > this.getY() + 3) {
-                this.setVelocity(this.getVelocity().x, 0.1, this.getVelocity().z);
-            } else if (getTargetY() < this.getY() && !isOnGround()) {
-                this.setVelocity(this.getVelocity().x, -0.25, this.getVelocity().z);
-            }
-        }
-        super.tickMovement();
-    }
-
-    @Override
-    public void tick() {
-
-        super.tick();
-    }
-
-    private double getTargetY() {
-        LivingEntity target = this.getTarget();
-        if (target != null) {
-            return target.getPos().y;
-        }
-        return 0;
     }
 }

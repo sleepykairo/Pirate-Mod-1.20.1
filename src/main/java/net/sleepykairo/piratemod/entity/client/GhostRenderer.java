@@ -1,16 +1,23 @@
 package net.sleepykairo.piratemod.entity.client;
 
+import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.render.entity.feature.SpiderEyesFeatureRenderer;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.util.Identifier;
 import net.sleepykairo.piratemod.PirateMod;
+import net.sleepykairo.piratemod.entity.client.feature.GhostFeatureRenderer;
 import net.sleepykairo.piratemod.entity.custom.BlokeEntity;
 import net.sleepykairo.piratemod.entity.custom.GhostEntity;
 
 public class GhostRenderer extends MobEntityRenderer<GhostEntity, GhostModel<GhostEntity>> {
-    private static final Identifier TEXTURE = new Identifier(PirateMod.MOD_ID, "textures/entity/ghost/ghost.png");
+    private static final Identifier TEXTURE = new Identifier(PirateMod.MOD_ID, "textures/entity/ghost/ghost_blank.png");
     public GhostRenderer(EntityRendererFactory.Context context) {
         super(context, new GhostModel<>(context.getPart(ModModelLayers.GHOST)), 1);
+        this.addFeature(new GhostFeatureRenderer<>(this));
     }
 
     @Override

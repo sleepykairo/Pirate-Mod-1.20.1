@@ -18,6 +18,7 @@ public class ModItemGroups {
                         entries.add(ModItems.CANNONBALL);
                         entries.add(ModItems.DARTFISH);
                         entries.add(ModItems.POISON_DARTFISH);
+                        entries.add(ModItems.MUSKET_BALL);
 
                         entries.add(ModItems.PLANT_MATTER);
                         entries.add(ModItems.CATALYST);
@@ -45,6 +46,9 @@ public class ModItemGroups {
                         entries.add(ModItems.JUNGLE_SWORDFISH);
                         entries.add(ModItems.NIGHTFIN_SWORDFISH);
                         entries.add(ModItems.GARDENERS_HOE);
+
+                        entries.add(ModItems.FLINTLOCK);
+                        entries.add(ModItems.MUSKET);
 
                         entries.add(ModBlocks.ALCHEMY_TABLE);
 

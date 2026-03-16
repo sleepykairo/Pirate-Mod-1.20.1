@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "piratemod:item/swordfish"
+    "layer0": "piratemod:item/storm_sword_charged"
   }
 }

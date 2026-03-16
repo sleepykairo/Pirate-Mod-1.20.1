@@ -20,6 +20,7 @@ import net.sleepykairo.piratemod.entity.ModEntities;
 import net.sleepykairo.piratemod.entity.client.*;
 import net.sleepykairo.piratemod.entity.custom.CannonballProjectileEntity;
 import net.sleepykairo.piratemod.entity.custom.DartfishProjectileEntity;
+import net.sleepykairo.piratemod.entity.custom.MusketBallEntity;
 import net.sleepykairo.piratemod.entity.custom.PoisonDartfishProjectileEntity;
 import net.sleepykairo.piratemod.item.ModItems;
 import net.sleepykairo.piratemod.screen.AlchemyTableScreen;
@@ -33,10 +34,14 @@ public class PirateModClient implements ClientModInitializer {
 
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BLOKE, BlokeModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.GHOST, GhostModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.CHARRED_GHAST, CharredGhastEntityModel::getTexturedModelData);
 
         EntityRendererRegistry.register(ModEntities.CANNONBALL_PROJECTILE, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.DARTFISH_PROJECTILE, DartfishProjectileEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.POISON_DARTFISH_PROJECTILE, PoisonDartfishProjectileEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.MUSKET_BALL_ENTITY, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.FLAME_PROJECTILE, FlyingItemEntityRenderer::new);
+
         EntityRendererRegistry.register(ModEntities.BlOKE, BlokeRenderer::new);
         EntityRendererRegistry.register(ModEntities.GHOST, GhostRenderer::new);
 

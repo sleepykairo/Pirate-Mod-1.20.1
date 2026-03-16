@@ -1,5 +1,6 @@
 package net.sleepykairo.piratemod.item;
 
+import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -18,7 +19,13 @@ public enum ModToolMaterial implements ToolMaterial {
     SWORDFISH(4, 250, 10.0f, -0.5f, 30,
             () -> Ingredient.ofItems(Items.BEDROCK)),
     SWORDFISH_FULL(4, 250, 10.0f, -1f, 30,
-            () -> Ingredient.ofItems(Items.BEDROCK));
+            () -> Ingredient.ofItems(Items.BEDROCK)),
+    STORM(4, 400, 9.0f, 3.5f, 15,
+            () -> Ingredient.ofItems(Items.NETHERITE_INGOT)),
+    SEA(4, 400, 9.0f, 3.5f, 15,
+                  () -> Ingredient.ofItems(Items.NETHERITE_INGOT)),
+    BONE(4, 400, 9.0f, 3.5f, 15,
+                () -> Ingredient.ofItems(Items.NETHERITE_INGOT));
 
 
     private final int miningLevel;

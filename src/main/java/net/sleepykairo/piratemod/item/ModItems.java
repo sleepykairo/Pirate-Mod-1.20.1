@@ -17,7 +17,6 @@ public class ModItems {
 
     public static void registerModItems() {
         PirateMod.LOGGER.info("Registering Mod Items for " + PirateMod.MOD_ID);
-
     }
 
     public static final Item CANNONBALL = registerItem("cannonball", new CannonballItem(new FabricItemSettings().maxCount(1)));
@@ -26,6 +25,7 @@ public class ModItems {
 
     public static final Item PLANT_MATTER = registerItem("plant_matter", new Item(new FabricItemSettings()));
     public static final Item CATALYST = registerItem("catalyst", new Item(new FabricItemSettings()));
+    public static final Item MUSKET_BALL = registerItem("musket_ball", new Item(new FabricItemSettings()));
 
     public static final Item FROST_INGOT = registerItem("frost_ingot", new Item(new FabricItemSettings()));
     public static final Item FIRE_INGOT = registerItem("fire_ingot", new Item(new FabricItemSettings()));
@@ -61,6 +61,25 @@ public class ModItems {
             "jungle_swordfish", new JungleSwordfishItem(ModToolMaterial.SWORDFISH,5,-2.5f, new FabricItemSettings()));
     public static final Item NIGHTFIN_SWORDFISH = registerItem(
             "nightfin_swordfish", new NightfinSwordfishItem(ModToolMaterial.SWORDFISH_FULL,3,-2.7f, new FabricItemSettings()));
+    public static final Item STORM_SWORD = registerItem(
+            "storm_sword", new StormSwordItem(ModToolMaterial.STORM,3,-2.4f, new FabricItemSettings()));
+    public static final Item SEA_SWORD = registerItem(
+            "sea_sword", new SeaSwordItem(ModToolMaterial.SEA,3,-2.4f, new FabricItemSettings()));
+    public static final Item BONE_SWORD = registerItem(
+            "bone_sword", new BoneSwordItem(ModToolMaterial.BONE,3,-2.4f, new FabricItemSettings()));
 
     public static final Item GOLDEN_FISHING_ROD = registerItem("golden_fishing_rod", new GoldenFishingRodItem(new FabricItemSettings()));
+
+    public static final Item FLINTLOCK = registerItem("flintlock", new FlintlockItem(new FabricItemSettings().maxCount(1)));
+    public static final Item MUSKET = registerItem("musket", new MusketItem(new FabricItemSettings().maxCount(1)));
+
+
+    public static final Item SEA_HELMET = registerItem("sea_helmet",
+            new ArmorItem(ModArmorMaterials.SEA, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item SEA_CHESTPLATE = registerItem("sea_chestplate",
+            new ArmorItem(ModArmorMaterials.SEA, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item SEA_LEGGINGS = registerItem("sea_leggings",
+            new ArmorItem(ModArmorMaterials.SEA, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item SEA_BOOTS = registerItem("sea_boots",
+            new ArmorItem(ModArmorMaterials.SEA, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 }

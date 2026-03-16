@@ -3,6 +3,7 @@ package net.sleepykairo.piratemod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.border.WorldBorder;
@@ -17,7 +18,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ALCHEMY_TABLE);
+//        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ALCHEMY_TABLE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BOX_OF_GOLDFISH);
 /*        blockStateModelGenerator.blockStateCollector.accept(MultipartBlockStateSupplier.create(ModBlocks.ALCHEMY_TABLE)
                 .with(When.create().set(Properties.HORIZONTAL_FACING, Direction.NORTH),
@@ -33,6 +34,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.PLANT_MATTER, Models.GENERATED);
         itemModelGenerator.register(ModItems.CATALYST, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MUSKET_BALL, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.FROST_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.FIRE_INGOT, Models.GENERATED);
@@ -58,5 +60,14 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.DIAMOND_SWORDFISH, Models.HANDHELD);
         itemModelGenerator.register(ModItems.JUNGLE_SWORDFISH, Models.HANDHELD);
         itemModelGenerator.register(ModItems.NIGHTFIN_SWORDFISH, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SEA_SWORD, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.FLINTLOCK, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.MUSKET, Models.HANDHELD);
+
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SEA_BOOTS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SEA_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SEA_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SEA_HELMET);
     }
 }
