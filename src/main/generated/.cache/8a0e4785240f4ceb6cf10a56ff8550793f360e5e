@@ -1,2 +1,4 @@
-// 1.20.1	2025-12-03T12:40:21.9562479	Pirate Mod/Tags for minecraft:item
+// 1.20.1	2026-03-17T17:55:06.4151544	Pirate Mod/Tags for minecraft:item
+c854d72ece307f6ef9af0e9aa579564e73b3006b data\piratemod\tags\items\ignore_enchanted_name_formatting.json
+276e9845673336fb86bd35cc9f537f5d1ea03f5e data\piratemod\tags\items\held_like_crossbow_unloaded.json
 0e834cdc79b9af4550735c9cf4af765cb2114cfd data\minecraft\tags\items\trimmable_armor.json

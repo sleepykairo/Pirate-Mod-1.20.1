@@ -1,5 +1,6 @@
 package net.sleepykairo.piratemod.entity.custom;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -7,19 +8,23 @@ import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.network.packet.s2c.play.GameStateChangeS2CPacket;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.sleepykairo.piratemod.entity.ModEntities;
 import net.sleepykairo.piratemod.item.ModItems;
+import net.sleepykairo.piratemod.util.ModTags;
 
 public class MusketBallEntity extends ThrownItemEntity {
     private float damage = 10;
@@ -77,5 +82,31 @@ public class MusketBallEntity extends ThrownItemEntity {
 
     public void setDamage(float f) {
         damage = f;
+    }
+
+    @Override
+    protected void onBlockCollision(BlockState state) {
+        super.onBlockCollision(state);
+
+    }
+
+    @Override
+    protected void onCollision(HitResult hitResult) {
+        super.onCollision(hitResult);
+        if (hitResult.getType() == HitResult.Type.ENTITY) return;
+
+        if (getWorld() instanceof ServerWorld serverWorld)
+        {
+            BlockHitResult blockHitResult = (BlockHitResult) hitResult;
+            BlockState state = serverWorld.getBlockState(blockHitResult.getBlockPos());
+
+            if (state.isIn(ModTags.Blocks.MUSKET_BALL_BREAKABLE))
+            {
+                serverWorld.breakBlock(blockHitResult.getBlockPos(), false, this.getOwner());
+            }
+            else {
+                this.discard();
+            }
+        }
     }
 }

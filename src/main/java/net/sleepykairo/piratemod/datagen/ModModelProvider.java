@@ -27,8 +27,11 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(ModItems.TEST, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CANNONBALL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GRAPESHOT, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.DARTFISH, Models.GENERATED);
         itemModelGenerator.register(ModItems.POISON_DARTFISH, Models.GENERATED);
 
@@ -62,8 +65,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.NIGHTFIN_SWORDFISH, Models.HANDHELD);
         itemModelGenerator.register(ModItems.SEA_SWORD, Models.HANDHELD);
 
-        itemModelGenerator.register(ModItems.FLINTLOCK, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.MUSKET, Models.HANDHELD);
+//        itemModelGenerator.register(ModItems.FLINTLOCK, Models.HANDHELD);
+//        itemModelGenerator.register(ModItems.MUSKET, Models.HANDHELD);
 
         itemModelGenerator.registerArmor((ArmorItem) ModItems.SEA_BOOTS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.SEA_LEGGINGS);

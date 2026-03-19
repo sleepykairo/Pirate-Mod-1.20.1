@@ -6,6 +6,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
 
 public class NightfinSwordfishItem extends SwordItem {

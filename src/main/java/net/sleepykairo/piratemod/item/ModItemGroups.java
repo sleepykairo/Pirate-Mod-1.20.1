@@ -16,12 +16,10 @@ public class ModItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.pirate"))
                     .icon(() -> new ItemStack(ModItems.CANNONBALL)).entries((displayContext, entries) -> {
                         entries.add(ModItems.CANNONBALL);
+                        entries.add(ModItems.GRAPESHOT);
                         entries.add(ModItems.DARTFISH);
                         entries.add(ModItems.POISON_DARTFISH);
                         entries.add(ModItems.MUSKET_BALL);
-
-                        entries.add(ModItems.PLANT_MATTER);
-                        entries.add(ModItems.CATALYST);
 
                         entries.add(ModItems.FROST_INGOT);
                         entries.add(ModItems.FIRE_INGOT);
@@ -45,12 +43,19 @@ public class ModItemGroups {
                         entries.add(ModItems.DIAMOND_SWORDFISH);
                         entries.add(ModItems.JUNGLE_SWORDFISH);
                         entries.add(ModItems.NIGHTFIN_SWORDFISH);
-                        entries.add(ModItems.GARDENERS_HOE);
+
+                        entries.add(ModItems.SEA_SWORD);
+                        entries.add(ModItems.STORM_SWORD);
+                        entries.add(ModItems.BONE_SWORD);
 
                         entries.add(ModItems.FLINTLOCK);
                         entries.add(ModItems.MUSKET);
+                        entries.add(ModItems.ARCHERFISH);
 
-                        entries.add(ModBlocks.ALCHEMY_TABLE);
+                        entries.add(ModItems.SEA_HELMET);
+                        entries.add(ModItems.SEA_CHESTPLATE);
+                        entries.add(ModItems.SEA_LEGGINGS);
+                        entries.add(ModItems.SEA_BOOTS);
 
                     }).build());
 

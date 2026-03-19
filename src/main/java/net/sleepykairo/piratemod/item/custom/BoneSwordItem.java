@@ -105,6 +105,11 @@ public class BoneSwordItem extends SwordItem {
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 
+    @Override
+    public boolean allowNbtUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {
+        return false;
+    }
+
     public static int getFireTime(ItemStack stack) {
         NbtCompound nbtCompound = stack.getNbt();
         return nbtCompound != null ? nbtCompound.getInt(FIRE_TIME_KEY) : -1;

@@ -6,6 +6,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.CrossbowUser;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
@@ -46,7 +47,8 @@ public class MusketItem
         implements Vanishable {
     public static final int TICKS_PER_SECOND = 20;
     public static final int RANGE = 15;
-    private boolean hasPlayedSound = false;
+    private static final String CHARGED_KEY = "Charged";
+    private boolean charged = false;
 
     public MusketItem(Item.Settings settings) {
         super(settings);
@@ -62,10 +64,9 @@ public class MusketItem
         boolean isCreativeAndHasAmmo;
         int i;
         float f;
-        if (!(user instanceof PlayerEntity)) {
+        if (!(user instanceof PlayerEntity playerEntity)) {
             return;
         }
-        PlayerEntity playerEntity = (PlayerEntity)user;
         boolean isCreativeMode = playerEntity.getAbilities().creativeMode;
         ItemStack itemStack = playerEntity.getProjectileType(stack);
         if (itemStack.isEmpty() && !isCreativeMode) {
@@ -74,11 +75,12 @@ public class MusketItem
         if (itemStack.isEmpty()) {
             itemStack = new ItemStack(ModItems.MUSKET_BALL);
         }
-        if ((double)(f = MusketItem.getPullProgress(i = this.getMaxUseTime(stack) - remainingUseTicks)) < 1) {
+        if ((double)(f = this.getPullProgress(i = this.getMaxUseTime(stack) - remainingUseTicks)) < 1) {
             return;
         }
         boolean bl3 = isCreativeAndHasAmmo = isCreativeMode && itemStack.isOf(ModItems.MUSKET_BALL);
         if (!world.isClient) {
+            setCharged(stack, false);
             int k;
             int j;
             MusketBallEntity projectileEntity = new MusketBallEntity(user, world);
@@ -87,7 +89,7 @@ public class MusketItem
             projectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0f, 5f, 0.0f);
             stack.damage(1, playerEntity, p -> p.sendToolBreakStatus(playerEntity.getActiveHand()));
             world.spawnEntity(projectileEntity);
-            world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_FIREWORK_ROCKET_BLAST, SoundCategory.PLAYERS, 2.0f, 0.0f);
+            world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_FIREWORK_ROCKET_BLAST, SoundCategory.PLAYERS, 1.0f, 0.0f);
             if (world instanceof ServerWorld serverWorld) {
                 Vec3d pos = user.getRotationVector().normalize().multiply((double) 2 / 3);
                 serverWorld.spawnParticles(
@@ -116,7 +118,7 @@ public class MusketItem
         playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
     }
 
-    public static float getPullProgress(int useTicks) {
+    public float getPullProgress(int useTicks) {
         float f = (float)useTicks / 40.0f;
         if ((f = (f * f + f * 2.0f) / 3.0f) > 1.0f) {
             f = 1.0f;
@@ -131,7 +133,7 @@ public class MusketItem
 
     @Override
     public UseAction getUseAction(ItemStack stack) {
-        return UseAction.CROSSBOW;
+        return UseAction.BOW;
     }
 
     @Override
@@ -152,6 +154,11 @@ public class MusketItem
     }
 
     @Override
+    public boolean allowNbtUpdateAnimation(PlayerEntity player, Hand hand, ItemStack oldStack, ItemStack newStack) {
+        return isCharged(newStack);
+    }
+
+    @Override
     public int getRange() {
         return 15;
     }
@@ -159,21 +166,27 @@ public class MusketItem
     @Override
     public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
         if (!world.isClient) {
-            int i = EnchantmentHelper.getLevel(Enchantments.QUICK_CHARGE, stack);
-            SoundEvent soundEvent = SoundEvents.ITEM_CROSSBOW_LOADING_START;
+            float pullProgress = this.getPullProgress(this.getMaxUseTime(stack) - remainingUseTicks);
             SoundEvent soundEvent2 = SoundEvents.BLOCK_STONE_BUTTON_CLICK_ON;
-            float f = MusketItem.getPullProgress(i = this.getMaxUseTime(stack) - remainingUseTicks);
-            if (f < 0.2f) {
-                hasPlayedSound = false;
-            }
-//            if (f >= 0.2f) {
-//                world.playSound(null, user.getX(), user.getY(), user.getZ(), soundEvent, SoundCategory.PLAYERS, 0.5f, 1.0f);
-//            }
-            if (f >= 1f && soundEvent2 != null && !hasPlayedSound) {
+            PirateMod.LOGGER.info("pullProgress: {}", pullProgress);
+
+            if (pullProgress < 1) {
+                setCharged(stack, false);
+            } else if (!isCharged(stack)) {
                 world.playSound(null, user.getX(), user.getY(), user.getZ(), soundEvent2, SoundCategory.PLAYERS, 2.0f, 2.0f);
-                hasPlayedSound = true;
+                setCharged(stack, true);
             }
         }
+    }
+
+    public static boolean isCharged(ItemStack stack) {
+        NbtCompound nbtCompound = stack.getNbt();
+        return nbtCompound != null && nbtCompound.getBoolean(CHARGED_KEY);
+    }
+
+    public static void setCharged(ItemStack stack, boolean charged) {
+        NbtCompound nbtCompound = stack.getOrCreateNbt();
+        nbtCompound.putBoolean(CHARGED_KEY, charged);
     }
 }
 

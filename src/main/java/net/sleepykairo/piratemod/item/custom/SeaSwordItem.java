@@ -14,6 +14,8 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.scoreboard.AbstractTeam;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
@@ -43,7 +45,11 @@ public class SeaSwordItem extends SwordItem {
                 LivingEntity.class, user.getBoundingBox().expand(radius, 0.25, radius));
 
         for (LivingEntity entity : hitEntitiesList) {
-            if (entity == user || entity.isTeammate(user)) continue;
+            if (entity == user) continue;
+            if (entity.getScoreboardTeam() == user.getScoreboardTeam() && entity.getScoreboardTeam() != null) {
+                if (!entity.getScoreboardTeam().isFriendlyFireAllowed()) continue;
+            }
+
             entity.damage(user.getDamageSources().playerAttack(user), 6);
             entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 60, 0));
 

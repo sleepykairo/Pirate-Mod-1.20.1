@@ -1,0 +1,76 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "piratemod:item/musket"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        -80,
+        260,
+        -40
+      ],
+      "translation": [
+        -1,
+        0,
+        -1
+      ],
+      "scale": [
+        1.5,
+        1.5,
+        0.9
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -80,
+        -280,
+        40
+      ],
+      "translation": [
+        -1,
+        0,
+        -1
+      ],
+      "scale": [
+        1.5,
+        1.5,
+        0.9
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        5,
+        -80,
+        25
+      ],
+      "translation": [
+        1.13,
+        4.7,
+        -2.63
+      ],
+      "scale": [
+        1.36,
+        1.36,
+        0.68
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        5,
+        100,
+        -25
+      ],
+      "translation": [
+        1.13,
+        4.7,
+        -2.63
+      ],
+      "scale": [
+        1.36,
+        1.36,
+        0.68
+      ]
+    }
+  }
+}

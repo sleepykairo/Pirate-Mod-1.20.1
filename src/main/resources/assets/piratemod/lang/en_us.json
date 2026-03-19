@@ -1,5 +1,9 @@
 {
+  "item.piratemod.test": "Test",
+
   "item.piratemod.cannonball": "Cannonball",
+  "item.piratemod.grapeshot": "Grapeshot",
+
   "item.piratemod.dartfish": "Dartfish",
   "item.piratemod.poison_dartfish": "Poison Dartfish",
 
@@ -29,6 +33,7 @@
   "item.piratemod.molten_swordfish": "Molten Swordfish",
   "item.piratemod.spectral_swordfish": "Spectral Swordfish",
   "item.piratemod.diamond_swordfish": "Diamond Swordfish",
+  "item.piratemod.diamond_swordfish.tooltip": "Sharpness gives extra damage per level",
   "item.piratemod.jungle_swordfish": "Jungle Swordfish",
   "item.piratemod.nightfin_swordfish": "Nightfin Swordfish",
   "item.piratemod.storm_sword": "Stormbringer's Sword",
@@ -39,6 +44,7 @@
 
   "item.piratemod.flintlock": "Flintlock",
   "item.piratemod.musket": "Musket",
+  "item.piratemod.archerfish": "Archerfish",
 
   "item.piratemod.sea_helmet": "Mariner's Helmet",
   "item.piratemod.sea_chestplate": "Mariner's Chestplate",
@@ -47,6 +53,10 @@
 
 
   "block.piratemod.alchemy_table": "Alchemy Table",
+
+
+  "entity.piratemod.musket_ball_projectile": "Musket Ball",
+  "entity.piratemod.flame_projectile": "Flame",
 
 
   "effect.piratemod.frost_walker_effect": "Frost Walker",

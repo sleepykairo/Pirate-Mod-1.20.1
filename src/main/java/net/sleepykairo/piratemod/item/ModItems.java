@@ -19,7 +19,11 @@ public class ModItems {
         PirateMod.LOGGER.info("Registering Mod Items for " + PirateMod.MOD_ID);
     }
 
+    public static final Item TEST = registerItem("test", new TestItem(new FabricItemSettings().maxCount(64)));
+
     public static final Item CANNONBALL = registerItem("cannonball", new CannonballItem(new FabricItemSettings().maxCount(1)));
+    public static final Item GRAPESHOT = registerItem("grapeshot", new Item(new FabricItemSettings().maxCount(1)));
+
     public static final Item DARTFISH = registerItem("dartfish", new DartfishItem(new FabricItemSettings().maxCount(16)));
     public static final Item POISON_DARTFISH = registerItem("poison_dartfish", new PoisonDartfishItem(new FabricItemSettings().maxCount(16)));
 
@@ -56,11 +60,11 @@ public class ModItems {
     public static final Item SPECTRAL_SWORDFISH = registerItem(
             "spectral_swordfish", new SwordItem(ModToolMaterial.SWORDFISH,6,-2.2f, new FabricItemSettings()));
     public static final Item DIAMOND_SWORDFISH = registerItem(
-            "diamond_swordfish", new DiamondSwordfishItem(ModToolMaterial.SWORDFISH,7,-2.5f, new FabricItemSettings()));
+            "diamond_swordfish", new DiamondSwordfishItem(ModToolMaterial.SWORDFISH,6,-2.4f, new FabricItemSettings()));
     public static final Item JUNGLE_SWORDFISH = registerItem(
-            "jungle_swordfish", new JungleSwordfishItem(ModToolMaterial.SWORDFISH,5,-2.5f, new FabricItemSettings()));
+            "jungle_swordfish", new JungleSwordfishItem(ModToolMaterial.SWORDFISH,5,-2.4f, new FabricItemSettings()));
     public static final Item NIGHTFIN_SWORDFISH = registerItem(
-            "nightfin_swordfish", new NightfinSwordfishItem(ModToolMaterial.SWORDFISH_FULL,3,-2.7f, new FabricItemSettings()));
+            "nightfin_swordfish", new NightfinSwordfishItem(ModToolMaterial.SWORDFISH_FULL,3,-2.6f, new FabricItemSettings()));
     public static final Item STORM_SWORD = registerItem(
             "storm_sword", new StormSwordItem(ModToolMaterial.STORM,3,-2.4f, new FabricItemSettings()));
     public static final Item SEA_SWORD = registerItem(
@@ -72,6 +76,7 @@ public class ModItems {
 
     public static final Item FLINTLOCK = registerItem("flintlock", new FlintlockItem(new FabricItemSettings().maxCount(1)));
     public static final Item MUSKET = registerItem("musket", new MusketItem(new FabricItemSettings().maxCount(1)));
+    public static final Item ARCHERFISH = registerItem("archerfish", new ArcherfishItem(new FabricItemSettings().maxCount(1)));
 
 
     public static final Item SEA_HELMET = registerItem("sea_helmet",

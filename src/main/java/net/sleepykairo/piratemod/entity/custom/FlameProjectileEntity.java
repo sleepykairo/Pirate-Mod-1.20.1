@@ -103,7 +103,15 @@ public class FlameProjectileEntity extends ThrownItemEntity {
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         Entity entity = entityHitResult.getEntity();
-        if(!this.getWorld().isClient() && entity != this.getOwner() && !entity.isTeammate(this.getOwner())){
+        if (this.getOwner() != null)
+        {
+            if (entity == this.getOwner()) return;
+            if (entity.getScoreboardTeam() == this.getOwner().getScoreboardTeam() && entity.getScoreboardTeam() != null) {
+                if (!entity.getScoreboardTeam().isFriendlyFireAllowed()) return;
+            }
+        }
+
+        if(!this.getWorld().isClient()){
             this.getWorld().sendEntityStatus(this, (byte)3);
 
             ((ServerWorld)this.getWorld()).spawnParticles(

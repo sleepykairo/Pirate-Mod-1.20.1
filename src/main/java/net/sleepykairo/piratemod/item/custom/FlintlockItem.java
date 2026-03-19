@@ -217,7 +217,7 @@ public class FlintlockItem extends RangedWeaponItem {
         }
 //        crossbow.damage(bl ? 3 : 1, shooter, e -> e.sendToolBreakStatus(hand));
         world.spawnEntity(projectileEntity);
-        world.playSound(null, shooter.getX(), shooter.getY(), shooter.getZ(), SoundEvents.ENTITY_FIREWORK_ROCKET_BLAST, SoundCategory.PLAYERS, 2.0f, 0.0f);
+        world.playSound(null, shooter.getX(), shooter.getY(), shooter.getZ(), SoundEvents.ENTITY_FIREWORK_ROCKET_BLAST, SoundCategory.PLAYERS, 1.25f, 0.0f);
         if (world instanceof ServerWorld serverWorld) {
             Vec3d pos = shooter.getRotationVector().normalize().multiply((double) 2 / 3);
             serverWorld.spawnParticles(

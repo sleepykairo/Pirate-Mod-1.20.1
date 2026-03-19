@@ -1,4 +1,4 @@
-// 1.20.1	2025-12-03T12:40:21.9547581	Pirate Mod/Model Definitions
+// 1.20.1	2026-03-17T17:55:06.4136544	Pirate Mod/Model Definitions
 fdf5dee15fabe323a25b48c8f49b5d14267f67c6 assets\piratemod\models\item\sea_helmet_redstone_trim.json
 93a2725ea642ae68f42c1bb51f7629064472b616 assets\piratemod\models\item\sea_chestplate_redstone_trim.json
 29a2d81ea0ae95fce2dd9a7807b1ea86bdbd8014 assets\piratemod\models\item\sea_boots.json
@@ -31,6 +31,7 @@ f668e311f42c85f5b3a854a30077f4df98785068 assets\piratemod\models\item\dartfish.j
 c89db46e27a52043fd34265b674e4aa9f3ea41b0 assets\piratemod\models\item\jungle_swordfish.json
 60449524192b8d2eb553c481018014618b720bed assets\piratemod\models\item\fire_ingot.json
 475871db2e836274a1b3ac444f6e94007cb246c3 assets\piratemod\models\item\sea_chestplate_iron_trim.json
+f140fc85398bd4777c7f73dd268ff854f9a5fc02 assets\piratemod\models\item\grapeshot.json
 742c705358d9ba00dbfac754e09b90511f716596 assets\piratemod\models\item\catalyst.json
 6c842273f01db2a580f32e3e16e2a27dd731aa27 assets\piratemod\models\item\emerald_fish.json
 05ff45baef9b966974b9bdc8f33d46a3366992c0 assets\piratemod\models\item\sea_helmet_copper_trim.json
@@ -42,6 +43,7 @@ d8e5eadff35cda21a60b68277926cbae2c13e08c assets\piratemod\models\item\sea_helmet
 1c249d8056c39290b4172d4645b28da9c40c440c assets\piratemod\models\item\sea_helmet_gold_trim.json
 bb96bc61a988ffa9c94533c339bfac6818352e93 assets\piratemod\models\item\sea_leggings_amethyst_trim.json
 c8d8013c60e43a681e75f0d9f77a28a2020cc48d assets\piratemod\models\item\plant_matter.json
+672121d1f838a302e239941685a030281ac02f2e assets\piratemod\models\item\test.json
 1eb01eb94fc8ba4b875f64ad41379b77ba512cdb assets\piratemod\models\item\sea_chestplate_netherite_trim.json
 98c352944e3e545be93599fab3127220f6b53967 assets\piratemod\models\item\light_ingot.json
 9f8c04a38a796c358b42b5add0a9b8e50032f0eb assets\piratemod\models\item\cannonball.json
@@ -60,7 +62,6 @@ e041be3f7ac90a7429fe09af3e709ef06ad4b3ba assets\piratemod\models\item\sea_boots_
 7202ec5ca8c02215a9df577bef899a5362c7ed6e assets\piratemod\models\item\plant_ingot.json
 389a33f52ca5b485748a4a44e665455bbea295ee assets\piratemod\models\item\sea_leggings_diamond_trim.json
 bf2515dde1d4542796db218bac52cfce9564636b assets\piratemod\models\item\sea_boots_iron_trim.json
-8a71d539b12adb2219f8a9514ef3e9747891d14f assets\piratemod\models\item\flintlock.json
 a05c88c007292a89b7def0d401cddbe8999075ad assets\piratemod\models\item\diamond_swordfish.json
 2eee51f297f3c3fff4416fdff535ff22f1b88ecc assets\piratemod\models\item\sea_chestplate_quartz_trim.json
 6649b2f31ccf5ab65ad3575823792afe63ee3511 assets\piratemod\models\item\sea_leggings_iron_trim.json
@@ -68,7 +69,6 @@ a05c88c007292a89b7def0d401cddbe8999075ad assets\piratemod\models\item\diamond_sw
 223c2b65bff911924d6f2e8f87c36c2168c0be51 assets\piratemod\models\item\sea_chestplate_gold_trim.json
 2019f3c16baead83f35c5d32dbae10ca2e6ee1d8 assets\piratemod\models\item\sea_boots_amethyst_trim.json
 e64ac3e816763dd46432354edd020f6d72d736d1 assets\piratemod\models\item\musket_ball.json
-b4caedf91ca36ba22cda9642e5cdc58d8a6ef1b8 assets\piratemod\models\item\musket.json
 0ebb6b66a51041593d4efee249587236a56733fb assets\piratemod\models\item\sea_helmet_iron_trim.json
 84206f8b489a42c0e03d931124bd0a3a7af8e608 assets\piratemod\models\item\dark_ingot.json
 14e87f32328968db34457200b09da56fcb7fbafd assets\piratemod\models\item\spectral_swordfish.json
