@@ -67,6 +67,12 @@ public class MusketBallEntity extends ThrownItemEntity {
     }
 
     @Override
+    protected void onBlockCollision(BlockState state) {
+//        super.onBlockCollision(state);
+        this.discard();
+    }
+
+    @Override
     public void tick() {
         super.tick();
         if (getWorld() instanceof ServerWorld serverWorld) {
@@ -84,29 +90,23 @@ public class MusketBallEntity extends ThrownItemEntity {
         damage = f;
     }
 
-    @Override
-    protected void onBlockCollision(BlockState state) {
-        super.onBlockCollision(state);
-
-    }
-
-    @Override
-    protected void onCollision(HitResult hitResult) {
-        super.onCollision(hitResult);
-        if (hitResult.getType() == HitResult.Type.ENTITY) return;
-
-        if (getWorld() instanceof ServerWorld serverWorld)
-        {
-            BlockHitResult blockHitResult = (BlockHitResult) hitResult;
-            BlockState state = serverWorld.getBlockState(blockHitResult.getBlockPos());
-
-            if (state.isIn(ModTags.Blocks.MUSKET_BALL_BREAKABLE))
-            {
-                serverWorld.breakBlock(blockHitResult.getBlockPos(), false, this.getOwner());
-            }
-            else {
-                this.discard();
-            }
-        }
-    }
+//    @Override
+//    protected void onCollision(HitResult hitResult) {
+//        super.onCollision(hitResult);
+//        if (hitResult.getType() == HitResult.Type.ENTITY) return;
+//
+//        if (getWorld() instanceof ServerWorld serverWorld)
+//        {
+//            BlockHitResult blockHitResult = (BlockHitResult) hitResult;
+//            BlockState state = serverWorld.getBlockState(blockHitResult.getBlockPos());
+//
+//            if (state.isIn(ModTags.Blocks.MUSKET_BALL_BREAKABLE))
+//            {
+//                serverWorld.breakBlock(blockHitResult.getBlockPos(), false, this.getOwner());
+//            }
+//            else {
+//                this.discard();
+//            }
+//        }
+//    }
 }

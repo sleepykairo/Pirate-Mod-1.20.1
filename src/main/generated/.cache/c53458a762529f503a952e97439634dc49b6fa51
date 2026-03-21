@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-17T17:55:06.4136544	Pirate Mod/Model Definitions
+// 1.20.1	2026-03-20T21:33:51.0272771	Pirate Mod/Model Definitions
 fdf5dee15fabe323a25b48c8f49b5d14267f67c6 assets\piratemod\models\item\sea_helmet_redstone_trim.json
 93a2725ea642ae68f42c1bb51f7629064472b616 assets\piratemod\models\item\sea_chestplate_redstone_trim.json
 29a2d81ea0ae95fce2dd9a7807b1ea86bdbd8014 assets\piratemod\models\item\sea_boots.json
@@ -16,14 +16,14 @@ c0380244e16637822026fec986ab60166dd77953 assets\piratemod\models\block\box_of_go
 e738d3b1b8cd2c6c2f298ae470dbc9aebe601c4e assets\piratemod\models\item\sea_helmet_diamond_trim.json
 4b2bfedf4d6ad86780f7fe919e84bbcc60952ab2 assets\piratemod\models\item\sea_chestplate_lapis_trim.json
 6fa8390e3a7424205ce43b9fe915f5882b715f79 assets\piratemod\models\item\sea_helmet_lapis_trim.json
-36f7d6ae5865eaf20df9fa6bf0ff319176949ad4 assets\piratemod\models\item\sea_chestplate.json
 d4947be35a89aeb09b0310a83c26dd113d281229 assets\piratemod\models\item\sea_boots_emerald_trim.json
+36f7d6ae5865eaf20df9fa6bf0ff319176949ad4 assets\piratemod\models\item\sea_chestplate.json
 ef5d879d80fa66e9c8ff59dcac0fb5633db2d0af assets\piratemod\models\item\sea_boots_quartz_trim.json
 2c577f8c7f98d322bebc2b183b3a5cf5629ee89d assets\piratemod\models\item\green_sunfish.json
 123f195171ba47bf15eecbf86cdae6cb97f21056 assets\piratemod\models\item\sea_chestplate_emerald_trim.json
 430d0fce143692d1e341739caaa6c66064f72caa assets\piratemod\models\item\sea_chestplate_diamond_trim.json
-ea28b635f1c401f52d6c3010b6449bf1aad431be assets\piratemod\models\item\sea_chestplate_copper_trim.json
 8a301d295c966d9e86c7d73ee0cb2e46c39ed49b assets\piratemod\models\item\gardeners_hoe.json
+ea28b635f1c401f52d6c3010b6449bf1aad431be assets\piratemod\models\item\sea_chestplate_copper_trim.json
 cdf2180bb7c5a417d67f0c3e5dc294a3ad7beb28 assets\piratemod\models\item\goldfish.json
 cf16d08a45b9c0eda11084cd61261ce003d65b1d assets\piratemod\models\item\sea_leggings.json
 a75fe0ba9da56b994c5358772fb9acc7cb5118c4 assets\piratemod\models\item\sea_sword.json

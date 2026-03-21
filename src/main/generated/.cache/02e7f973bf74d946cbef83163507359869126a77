@@ -1,3 +1,7 @@
-// 1.20.1	2026-03-17T17:55:06.4126549	Pirate Mod/Recipes
+// 1.20.1	2026-03-20T21:33:51.0262854	Pirate Mod/Recipes
+13185b20afcaad367fb5b1c2400ecfb484918718 data\piratemod\advancements\recipes\combat\musket.json
+b38e162f0660351dc84412efa11999c50923cf00 data\piratemod\recipes\musket.json
 0c921d2c107f7e1a02affc0e270ed47eb40dd73f data\piratemod\advancements\recipes\combat\cannonball.json
+d2c2be4c70e83cccb53f3bd93e6f30c7d9b6fdc7 data\piratemod\advancements\recipes\combat\flintlock.json
 c876b56047b94de3b2bcfcbc1385bcccb9795aff data\piratemod\recipes\cannonball.json
+d057237e4b342cc000f1848ad1e8b8c8f91598a0 data\piratemod\recipes\flintlock.json

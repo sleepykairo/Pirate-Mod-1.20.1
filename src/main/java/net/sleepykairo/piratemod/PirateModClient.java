@@ -41,6 +41,7 @@ public class PirateModClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.POISON_DARTFISH_PROJECTILE, PoisonDartfishProjectileEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.MUSKET_BALL_ENTITY, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.FLAME_PROJECTILE, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.STAR_PROJECTILE, FlyingItemEntityRenderer::new);
 
         EntityRendererRegistry.register(ModEntities.BlOKE, BlokeRenderer::new);
         EntityRendererRegistry.register(ModEntities.GHOST, GhostRenderer::new);

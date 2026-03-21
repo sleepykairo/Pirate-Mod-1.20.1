@@ -10,8 +10,8 @@
     "ItemMixin",
     "LivingEntityMixin",
     "PlayerAttackMixin",
+    "PlayerEntityStormMixin",
     "RarityTypeExtender",
-    "StormMixin",
     "TestingMixin"
   ],
   "injectors": {

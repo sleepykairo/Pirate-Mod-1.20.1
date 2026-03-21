@@ -32,6 +32,10 @@ public class ModEntities {
             new Identifier(PirateMod.MOD_ID, "flame_projectile"),
             FabricEntityTypeBuilder.<FlameProjectileEntity>create(SpawnGroup.MISC, FlameProjectileEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25f, 0.25f)).trackRangeBlocks(4).trackedUpdateRate(10).build());
+    public static final EntityType<StarProjectileEntity> STAR_PROJECTILE = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(PirateMod.MOD_ID, "star_projectile"),
+            FabricEntityTypeBuilder.<StarProjectileEntity>create(SpawnGroup.MISC, StarProjectileEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.25f, 0.25f)).trackRangeBlocks(4).trackedUpdateRate(10).build());
 
 
     public static final EntityType<BlokeEntity> BlOKE = Registry.register(Registries.ENTITY_TYPE,

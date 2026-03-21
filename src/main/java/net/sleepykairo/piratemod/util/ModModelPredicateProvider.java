@@ -14,6 +14,7 @@ import net.sleepykairo.piratemod.item.custom.StormSwordItem;
 public class ModModelPredicateProvider {
     public static void registerModModels() {
         registerFishingRod(ModItems.GOLDEN_FISHING_ROD);
+        registerBow(ModItems.NORTH_STAR_BOW);
 
         ModelPredicateProviderRegistry.register(ModItems.STORM_SWORD, new Identifier("charged"), (stack, world, entity, seed) ->
                 StormSwordItem.isCharged(stack) ? 1.0f : 0.0f);
@@ -36,5 +37,22 @@ public class ModModelPredicateProvider {
             }
             return (bl || bl2) && entity instanceof PlayerEntity && ((PlayerEntity)entity).fishHook != null ? 1.0f : 0.0f;
         });
+    }
+
+    private static void registerBow(Item bow) {
+        ModelPredicateProviderRegistry.register(bow, new Identifier("pull"), (stack, world, entity, seed) -> {
+            if (entity == null) {
+                return 0.0f;
+            }
+            if (entity.getActiveItem() != stack) {
+                return 0.0f;
+            }
+            return (float)(stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
+        });
+
+        ModelPredicateProviderRegistry.register(bow, new Identifier("pulling"),
+                (stack, world, entity, seed) -> entity != null
+                        && entity.isUsingItem()
+                        && entity.getActiveItem() == stack ? 1.0f : 0.0f);
     }
 }

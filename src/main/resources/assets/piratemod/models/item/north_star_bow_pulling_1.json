@@ -1,0 +1,6 @@
+{
+  "parent": "piratemod:item/north_star_bow",
+  "textures": {
+    "layer0": "piratemod:item/north_star_bow_pulling_1"
+  }
+}

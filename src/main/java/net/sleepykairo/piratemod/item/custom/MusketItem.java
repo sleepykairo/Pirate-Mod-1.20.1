@@ -168,7 +168,7 @@ public class MusketItem
         if (!world.isClient) {
             float pullProgress = this.getPullProgress(this.getMaxUseTime(stack) - remainingUseTicks);
             SoundEvent soundEvent2 = SoundEvents.BLOCK_STONE_BUTTON_CLICK_ON;
-            PirateMod.LOGGER.info("pullProgress: {}", pullProgress);
+//            PirateMod.LOGGER.info("pullProgress: {}", pullProgress);
 
             if (pullProgress < 1) {
                 setCharged(stack, false);

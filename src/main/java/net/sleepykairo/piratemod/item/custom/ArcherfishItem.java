@@ -43,7 +43,7 @@ public class ArcherfishItem extends MusketItem{
             for (int shotProjectiles = 0; shotProjectiles < 3; shotProjectiles++)
             {
                 MusketBallEntity projectileEntity = new MusketBallEntity(user, world);
-                projectileEntity.setDamage(16f);
+                projectileEntity.setDamage(15f);
 
                 projectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0f, 2.5f, 2.5f);
                 stack.damage(1, playerEntity, p -> p.sendToolBreakStatus(playerEntity.getActiveHand()));

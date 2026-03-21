@@ -5,6 +5,7 @@ import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.sleepykairo.piratemod.PirateMod;
 import net.sleepykairo.piratemod.item.custom.*;
 
@@ -31,60 +32,63 @@ public class ModItems {
     public static final Item CATALYST = registerItem("catalyst", new Item(new FabricItemSettings()));
     public static final Item MUSKET_BALL = registerItem("musket_ball", new Item(new FabricItemSettings()));
 
-    public static final Item FROST_INGOT = registerItem("frost_ingot", new Item(new FabricItemSettings()));
-    public static final Item FIRE_INGOT = registerItem("fire_ingot", new Item(new FabricItemSettings()));
-    public static final Item PLANT_INGOT = registerItem("plant_ingot", new Item(new FabricItemSettings()));
-    public static final Item STORM_INGOT = registerItem("storm_ingot", new Item(new FabricItemSettings()));
-    public static final Item OCEAN_INGOT = registerItem("ocean_ingot", new Item(new FabricItemSettings()));
-    public static final Item DARK_INGOT = registerItem("dark_ingot", new Item(new FabricItemSettings()));
-    public static final Item LIGHT_INGOT = registerItem("light_ingot", new Item(new FabricItemSettings()));
+    public static final Item FROST_INGOT = registerItem("frost_ingot", new Item(new FabricItemSettings().rarity(Rarity.RARE)));
+    public static final Item FIRE_INGOT = registerItem("fire_ingot", new Item(new FabricItemSettings().rarity(Rarity.RARE)));
+    public static final Item PLANT_INGOT = registerItem("plant_ingot", new Item(new FabricItemSettings().rarity(Rarity.RARE)));
+    public static final Item STORM_INGOT = registerItem("storm_ingot", new Item(new FabricItemSettings().rarity(Rarity.RARE)));
+    public static final Item OCEAN_INGOT = registerItem("ocean_ingot", new Item(new FabricItemSettings().rarity(Rarity.RARE)));
+    public static final Item DARK_INGOT = registerItem("dark_ingot", new Item(new FabricItemSettings().rarity(Rarity.RARE)));
+    public static final Item LIGHT_INGOT = registerItem("light_ingot", new Item(new FabricItemSettings().rarity(Rarity.RARE)));
 
-    public static final Item GOLDFISH = registerItem("goldfish", new Item(new FabricItemSettings().food(ModFoodComponents.GOLDFISH)));
+    public static final Item GOLDFISH = registerItem("goldfish", new Item(new FabricItemSettings().food(ModFoodComponents.GOLDFISH).rarity(Rarity.RARE)));
     public static final Item RED_SUNFISH = registerItem("red_sunfish", new Item(new FabricItemSettings().food(ModFoodComponents.RED_SUNFISH)));
     public static final Item GREEN_SUNFISH = registerItem("green_sunfish", new Item(new FabricItemSettings().food(ModFoodComponents.GREEN_SUNFISH)));
     public static final Item EMERALD_FISH = registerItem("emerald_fish", new Item(new FabricItemSettings().food(ModFoodComponents.EMERALD_FISH)));
 
 
     public static final Item SAWFISH = registerItem(
-            "sawfish", new AxeItem(ModToolMaterial.SAWFISH,8.0f,-3f, new FabricItemSettings()));
+            "sawfish", new AxeItem(ModToolMaterial.SAWFISH,8.0f,-3f, new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     public static final Item OBSIDIAN_SAWFISH = registerItem(
-            "obsidian_sawfish", new AxeItem(ModToolMaterial.OBSIDIAN_SAWFISH,8.5f,-3f, new FabricItemSettings()));
+            "obsidian_sawfish", new AxeItem(ModToolMaterial.OBSIDIAN_SAWFISH,8.5f,-3f, new FabricItemSettings().rarity(Rarity.RARE)));
 
     public static final Item GARDENERS_HOE = registerItem(
             "gardeners_hoe", new GardenersHoeItem(ModToolMaterial.GARDENERS_HOE,1,0f, new FabricItemSettings()));
 
     public static final Item SWORDFISH = registerItem(
-            "swordfish", new SwordItem(ModToolMaterial.SWORDFISH_FULL,8,-2.4f, new FabricItemSettings()));
+            "swordfish", new SwordItem(ModToolMaterial.SWORDFISH_FULL,8,-2.4f, new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item MOLTEN_SWORDFISH = registerItem(
-            "molten_swordfish", new MoltenSwordfishItem(ModToolMaterial.SWORDFISH,7,-2.4f, new FabricItemSettings()));
+            "molten_swordfish", new MoltenSwordfishItem(ModToolMaterial.SWORDFISH,7,-2.4f, new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item SPECTRAL_SWORDFISH = registerItem(
-            "spectral_swordfish", new SwordItem(ModToolMaterial.SWORDFISH,6,-2.2f, new FabricItemSettings()));
+            "spectral_swordfish", new SwordItem(ModToolMaterial.SWORDFISH,6,-2.2f, new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item DIAMOND_SWORDFISH = registerItem(
-            "diamond_swordfish", new DiamondSwordfishItem(ModToolMaterial.SWORDFISH,6,-2.4f, new FabricItemSettings()));
+            "diamond_swordfish", new DiamondSwordfishItem(ModToolMaterial.SWORDFISH,6,-2.4f, new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item JUNGLE_SWORDFISH = registerItem(
-            "jungle_swordfish", new JungleSwordfishItem(ModToolMaterial.SWORDFISH,5,-2.4f, new FabricItemSettings()));
+            "jungle_swordfish", new JungleSwordfishItem(ModToolMaterial.SWORDFISH,5,-2.4f, new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item NIGHTFIN_SWORDFISH = registerItem(
-            "nightfin_swordfish", new NightfinSwordfishItem(ModToolMaterial.SWORDFISH_FULL,3,-2.6f, new FabricItemSettings()));
+            "nightfin_swordfish", new NightfinSwordfishItem(ModToolMaterial.SWORDFISH_FULL,3,-2.6f, new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item STORM_SWORD = registerItem(
-            "storm_sword", new StormSwordItem(ModToolMaterial.STORM,3,-2.4f, new FabricItemSettings()));
+            "storm_sword", new StormSwordItem(ModToolMaterial.STORM,3,-2.4f, new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item SEA_SWORD = registerItem(
-            "sea_sword", new SeaSwordItem(ModToolMaterial.SEA,3,-2.4f, new FabricItemSettings()));
+            "sea_sword", new SeaSwordItem(ModToolMaterial.SEA,3,-2.4f, new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item BONE_SWORD = registerItem(
-            "bone_sword", new BoneSwordItem(ModToolMaterial.BONE,3,-2.4f, new FabricItemSettings()));
+            "bone_sword", new BoneSwordItem(ModToolMaterial.BONE,3,-2.4f, new FabricItemSettings().rarity(Rarity.RARE)));
 
     public static final Item GOLDEN_FISHING_ROD = registerItem("golden_fishing_rod", new GoldenFishingRodItem(new FabricItemSettings()));
 
+    public static final Item NORTH_STAR_BOW = registerItem(
+            "north_star_bow", new BowItem(new FabricItemSettings().rarity(Rarity.RARE)));
+
     public static final Item FLINTLOCK = registerItem("flintlock", new FlintlockItem(new FabricItemSettings().maxCount(1)));
     public static final Item MUSKET = registerItem("musket", new MusketItem(new FabricItemSettings().maxCount(1)));
-    public static final Item ARCHERFISH = registerItem("archerfish", new ArcherfishItem(new FabricItemSettings().maxCount(1)));
+    public static final Item ARCHERFISH = registerItem("archerfish", new ArcherfishItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE)));
 
 
     public static final Item SEA_HELMET = registerItem("sea_helmet",
-            new ArmorItem(ModArmorMaterials.SEA, ArmorItem.Type.HELMET, new FabricItemSettings()));
+            new ArmorItem(ModArmorMaterials.SEA, ArmorItem.Type.HELMET, new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item SEA_CHESTPLATE = registerItem("sea_chestplate",
-            new ArmorItem(ModArmorMaterials.SEA, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+            new ArmorItem(ModArmorMaterials.SEA, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item SEA_LEGGINGS = registerItem("sea_leggings",
-            new ArmorItem(ModArmorMaterials.SEA, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+            new ArmorItem(ModArmorMaterials.SEA, ArmorItem.Type.LEGGINGS, new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item SEA_BOOTS = registerItem("sea_boots",
-            new ArmorItem(ModArmorMaterials.SEA, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+            new ArmorItem(ModArmorMaterials.SEA, ArmorItem.Type.BOOTS, new FabricItemSettings().rarity(Rarity.RARE)));
 }
